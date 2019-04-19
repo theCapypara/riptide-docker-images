@@ -35,7 +35,6 @@ These images work like their official counterpart, but:
   - pdo_mysql
   - gd
   - mbstring
-  - zip
   - soap
   - xsl
   - intl

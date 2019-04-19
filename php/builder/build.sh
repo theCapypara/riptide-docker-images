@@ -18,4 +18,12 @@ for goal in */*/*/; do
     echo "FROM php:$version-$variant-$base" >> "$version/$base/$variant/Dockerfile"
     # Read base Dockefile, first three lines are skipped.
     tail -n +4 builder/Dockerfile >> "$version/$base/$variant/Dockerfile"
+
+    # If apache: Copy Vhost and add it
+    if [[ "apache" == "$variant" ]]
+    then
+        cp "builder/000-default.conf" "$version/$base/$variant/"
+        echo "COPY 000-default.conf /etc/apache2/sites-enabled/000-default.conf" >> "$version/$base/$variant/Dockerfile"
+    fi
+
 done
