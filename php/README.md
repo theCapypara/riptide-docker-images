@@ -36,7 +36,6 @@ These images work like their official counterpart, but:
   - xdebug (enabled via XDEBUG_CONFIG, see below)
   - pdo_mysql
   - gd
-  - mcrypt
   - mbstring
   - zip
   - soap

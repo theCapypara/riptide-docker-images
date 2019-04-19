@@ -10,7 +10,6 @@ RUN requirements="msmtp libmcrypt-dev libmcrypt4 libcurl3-dev libfreetype6 libjp
     && apt-get install -y $requirements \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install gd \
-    && docker-php-ext-install mcrypt \
     && docker-php-ext-install mbstring \
     && docker-php-ext-install zip \
     && docker-php-ext-install soap \
