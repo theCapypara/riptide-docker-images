@@ -56,7 +56,9 @@ and a sub-directory of each tag of the image. The sub-directories must be named
 after the tags used for buildings. They can also contain sub-directories.
 Those and additional tags and aliases (such as latest) must be specified in the README.md
 
-You need to provide an up-to-date documentation for your image, in form of a README.md.
+You need to provide an up-to-date documentation for your image, in form of a README.md. If you have
+sub-directories with different Dockerfiles, an up-to-date copy of the README.md must be present here.
+
 Templates can be found in the _contrib-templates directory (based on the official image docs).
 
 All images must be based on official images or other Riptide images.

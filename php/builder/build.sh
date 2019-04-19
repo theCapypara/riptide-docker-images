@@ -26,4 +26,6 @@ for goal in */*/*/; do
         echo "COPY 000-default.conf /etc/apache2/sites-enabled/000-default.conf" >> "$version/$base/$variant/Dockerfile"
     fi
 
+    cp "README.md" "$version/$base/$variant/"
+
 done
