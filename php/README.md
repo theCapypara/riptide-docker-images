@@ -1,16 +1,14 @@
 # Supported tags and respective `Dockerfile` links
 
-<!--- Examples (and required formatting): --->
-
--	[7.3-cli, 7-cli, cli, 7.3, 7, latest (*7.3/stretch/cli/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.3/stretch/cli/Dockerfile)
--	[7.3-apache, 7-apache, apache (*7.3/stretch/apache/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.3/stretch/apache/Dockerfile)
--	[7.3-fpm, 7-fpm, fpm (*7.3/stretch/fpm/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.3/stretch/fpm/Dockerfile)
--	[7.2-cli, 7.2 (*7.2/stretch/cli/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.2/stretch/cli/Dockerfile)
--	[7.2-apache (*7.2/stretch/apache/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.2/stretch/apache/Dockerfile)
--	[7.2-fpm (*7.2/stretch/fpm/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.2/stretch/fpm/Dockerfile)
--	[7.1-cli, 7.1 (*7.1/stretch/cli/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.1/stretch/cli/Dockerfile)
--	[7.1-apache (*7.1/stretch/apache/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.1/stretch/apache/Dockerfile)
--	[7.1-fpm (*7.1/stretch/fpm/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.1/stretch/fpm/Dockerfile)
+-	[`7.3-cli`, `7-cli`, `cli`, `7.3`, `7`, `latest` (*7.3/stretch/cli/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.3/stretch/cli/Dockerfile)
+-	[`7.3-apache`, `7-apache`, `apache` (*7.3/stretch/apache/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.3/stretch/apache/Dockerfile)
+-	[`7.3-fpm`, `7-fpm`, `fpm` (*7.3/stretch/fpm/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.3/stretch/fpm/Dockerfile)
+-	[`7.2-cli`, `7.2` (*7.2/stretch/cli/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.2/stretch/cli/Dockerfile)
+-	[`7.2-apache` (*7.2/stretch/apache/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.2/stretch/apache/Dockerfile)
+-	[`7.2-fpm` (*7.2/stretch/fpm/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.2/stretch/fpm/Dockerfile)
+-	[`7.1-cli`, `7.1` (*7.1/stretch/cli/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.1/stretch/cli/Dockerfile)
+-	[`7.1-apache` (*7.1/stretch/apache/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.1/stretch/apache/Dockerfile)
+-	[`7.1-fpm` (*7.1/stretch/fpm/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.1/stretch/fpm/Dockerfile)
 
 # Quick reference
 
@@ -63,7 +61,7 @@ or tools, be sure to open a [pull request](https://github.com/Parakoopa/riptide-
 # How to use this image.
 
 See the description of the [official PHP images](https://hub.docker.com/_/php). 
-The directory used for app sources is "/src", not "/usr/src"!
+The directory used for app sources is `/src`, not `/usr/src`!
 
 This image is meant to be used with [Riptide](https://github.com/Parakoopa/riptide-cli). 
 Using it without Riptide is probably possible, but not supported.
@@ -88,11 +86,11 @@ app:
         - src
 ```
 
-For all image variants, expect for "apache":
+For all image variants, expect for `apache`:
 
 - This image supports ``run_as_current_user: true`` for services (this is the default).
 
-For the "apache" image variant:
+For the `apache` image variant:
 
 - This image only supports ``run_as_current_user: false`` for services.
   To run the image with the user controlling riptide, instead of the image user, provide the APACHE_RUN_USER and APACHE_RUN_GROUP environment variables,
