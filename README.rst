@@ -24,11 +24,11 @@
 .. _repo:           https://github.com/Parakoopa/riptide-repo
 .. _docker_images:  https://github.com/Parakoopa/riptide-docker-images
 
-|build|
+|php|
 
-.. |build| image:: https://jenkins.riptide.parakoopa.de/buildStatus/icon?subject=build%20all%20images&job=riptide-docker-images%2Fmaster
-    :target: https://jenkins.riptide.parakoopa.de/blue/organizations/jenkins/riptide-docker-images/activity
-    :alt: Master Build Status
+.. |php| image:: https://img.shields.io/docker/build/riptidepy/php.svg?label=php
+    :target: https://img.shields.io/docker/build/riptidepy/php.svg
+    :alt: PHP Build status
 
 Riptide is a set of tools to manage development environments for web applications.
 It's using container virtualization tools, such as `Docker <https://www.docker.com/>`_
@@ -70,7 +70,7 @@ Your image command must either
    names are unknown).
 
 2. or your command must be runnable by the user specified in the image but
-   respect USER and GROUP environment variables that contain user and group ids.
+   respect USER and GROUP environment variables (may be called differently)  that contain user and group ids.
 
 3. or your command must only be runnable by the user specified in the image.
 
