@@ -4,11 +4,10 @@ FROM php:7.3-apache-stretch
 # Some parts are based on https://hub.docker.com/r/alexcheng/magento2/dockerfile
 
 # PHP extensions and msmtp
-RUN requirements="msmtp libmcrypt-dev libmcrypt4 libcurl3-dev libfreetype6 libjpeg62-turbo libjpeg62-turbo-dev libpng-dev libfreetype6-dev libicu-dev libxslt1-dev unzip libbz2-dev libzip-dev" \
+RUN requirements="msmtp libmcrypt-dev libwebp-dev libmcrypt4 libcurl3-dev libfreetype6 libjpeg62-turbo libjpeg62-turbo-dev libpng-dev libxpm-dev libfreetype6-dev libicu-dev libxslt1-dev unzip libbz2-dev libzip-dev" \
     && apt-get update \
     && apt-get install -y $requirements \
     && docker-php-ext-install pdo_mysql \
-    && docker-php-ext-install gd \
     && docker-php-ext-install mbstring \
     && docker-php-ext-install soap \
     && docker-php-ext-install xsl \
@@ -21,9 +20,12 @@ RUN requirements="msmtp libmcrypt-dev libmcrypt4 libcurl3-dev libfreetype6 libjp
     && docker-php-ext-install tokenizer \
     && docker-php-ext-install bcmath \
     && docker-php-ext-install bz2 \
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && requirementsToRemove="libmcrypt-dev libcurl3-dev libpng-dev libfreetype6-dev libjpeg62-turbo-dev libbz2-dev libzip-dev" \
-    && apt-get purge --auto-remove -y $requirementsToRemove \
+    && docker-php-ext-configure gd --with-gd --with-webp-dir --with-jpeg-dir \
+        --with-png-dir --with-zlib-dir --with-xpm-dir --with-freetype-dir \
+        --enable-gd-native-ttf \
+    && docker-php-ext-install gd \
+    && requirementsToRemove="libmcrypt-dev libwebp-dev libcurl3-dev libpng-dev libfreetype6-dev libjpeg62-turbo-dev libxpm-dev libbz2-dev libzip-dev" \
+    && apt-get purge -y $requirementsToRemove \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
@@ -64,7 +66,10 @@ RUN a2enmod rewrite || true
 RUN echo "memory_limit=2048M" > /usr/local/etc/php/conf.d/memory-limit.ini
 RUN echo "sendmail_path = /usr/bin/msmtp -t" > /usr/local/etc/php/conf.d/sendmail.ini
 # Allow the FPM process to access the environment variables passed in
-RUN echo "clear_env = no" > /usr/local/etc/php-fpm.d/zz-clear_env.ini
+RUN echo "clear_env = no" >> /usr/local/etc/php-fpm.d/www.conf
+# logging
+RUN echo "php_admin_value[error_log] = /var/log/fpm-php/pool-error.log" >> /usr/local/etc/php-fpm.d/www.conf
+RUN echo "php_admin_flag[log_errors] = on" >> /usr/local/etc/php-fpm.d/www.conf
 
 # Make /src the root source directory
 RUN rm -rf /usr/src && ln -s /src /usr/src
