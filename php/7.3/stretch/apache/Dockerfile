@@ -62,14 +62,18 @@ RUN curl -O https://files.magerun.net/n98-magerun2.phar \
 
 # Additional settings
 # || true for non-apache variants
-RUN a2enmod rewrite || true
-RUN echo "memory_limit=2048M" > /usr/local/etc/php/conf.d/memory-limit.ini
-RUN echo "sendmail_path = /usr/bin/msmtp -t" > /usr/local/etc/php/conf.d/sendmail.ini
-# Allow the FPM process to access the environment variables passed in
-RUN echo "clear_env = no" >> /usr/local/etc/php-fpm.d/www.conf
-# logging
-RUN echo "php_admin_value[error_log] = /var/log/fpm-php/pool-error.log" >> /usr/local/etc/php-fpm.d/www.conf
-RUN echo "php_admin_flag[log_errors] = on" >> /usr/local/etc/php-fpm.d/www.conf
+RUN a2enmod rewrite || true \
+    && echo "memory_limit=2048M" > /usr/local/etc/php/conf.d/memory-limit.ini \
+    && echo "sendmail_path = /usr/bin/msmtp -t" > /usr/local/etc/php/conf.d/sendmail.ini
+
+# PHP-FPM:
+# Since we use a template build, this get's executed in all images... could possibly
+# change that in the future
+RUN mkdir -p /usr/local/etc/php-fpm.d/ \
+    # Allow the FPM process to access the environment variables passed in
+    && echo "clear_env = no" >> /usr/local/etc/php-fpm.d/www.conf \
+    # logging
+    && echo "php_admin_flag[log_errors] = on" >> /usr/local/etc/php-fpm.d/www.conf
 
 # Make /src the root source directory
 RUN rm -rf /usr/src && ln -s /src /usr/src
