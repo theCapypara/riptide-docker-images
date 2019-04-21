@@ -27,11 +27,11 @@
 |php| |sphinx|
 
 .. |php| image:: https://img.shields.io/docker/cloud/build/riptidepy/php.svg?label=php
-    :target: https://img.shields.io/docker/build/riptidepy/php.svg
+    :target: https://hub.docker.com/r/riptidepy/php
     :alt: PHP Build status
 
 .. |sphinx| image:: https://img.shields.io/docker/cloud/build/riptidepy/sphinx.svg?label=sphinx
-    :target: https://img.shields.io/docker/build/riptidepy/php.svg
+    :target: https://hub.docker.com/r/riptidepy/sphinx
     :alt: Sphinx Build status
 
 Riptide is a set of tools to manage development environments for web applications.
