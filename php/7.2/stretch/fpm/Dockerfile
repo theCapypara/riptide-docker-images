@@ -63,6 +63,8 @@ RUN curl -O https://files.magerun.net/n98-magerun2.phar \
 RUN a2enmod rewrite || true
 RUN echo "memory_limit=2048M" > /usr/local/etc/php/conf.d/memory-limit.ini
 RUN echo "sendmail_path = /usr/bin/msmtp -t" > /usr/local/etc/php/conf.d/sendmail.ini
+# Allow the FPM process to access the environment variables passed in
+RUN echo "clear_env = no" > /usr/local/etc/php-fpm.d/zz-clear_env.ini
 
 # Make /src the root source directory
 RUN rm -rf /usr/src && ln -s /src /usr/src
