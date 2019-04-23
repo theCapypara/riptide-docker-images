@@ -11,6 +11,7 @@ RUN requirements="msmtp libmcrypt-dev libwebp-dev libmcrypt4 libcurl3-dev libfre
     && docker-php-ext-install mbstring \
     && docker-php-ext-install soap \
     && docker-php-ext-install xsl \
+    && docker-php-ext-install zip \
     && docker-php-ext-install intl \
     && docker-php-ext-install ctype \
     && docker-php-ext-install iconv \
