@@ -53,7 +53,8 @@ These images work like their official counterpart, but:
   - [n98-magerun2](https://github.com/netz98/n98-magerun2)
 - msmtp is installed by default to be used with a mailcatcher. It is configured in the php.ini but no msmtprc
   file is present. If you want to use msmtp, create an "/etc/msmtprc".
-  
+- Includes an SSH client
+
 This image is meant for developers using PHP. If you are missing any extensions
 or tools, be sure to open a [pull request](https://github.com/Parakoopa/riptide-docker-images/pulls).
 
