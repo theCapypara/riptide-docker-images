@@ -24,7 +24,7 @@
 .. _repo:           https://github.com/Parakoopa/riptide-repo
 .. _docker_images:  https://github.com/Parakoopa/riptide-docker-images
 
-|php| |sphinx|
+|php| |sphinx| |slack|
 
 .. |php| image:: https://img.shields.io/docker/cloud/build/riptidepy/php.svg?label=php
     :target: https://hub.docker.com/r/riptidepy/php
@@ -33,6 +33,10 @@
 .. |sphinx| image:: https://img.shields.io/docker/cloud/build/riptidepy/sphinx.svg?label=sphinx
     :target: https://hub.docker.com/r/riptidepy/sphinx
     :alt: Sphinx Build status
+
+.. |slack| image:: https://slack.riptide.parakoopa.de/badge.svg
+    :target: https://slack.riptide.parakoopa.de
+    :alt: Join our Slack workspace
 
 Riptide is a set of tools to manage development environments for web applications.
 It's using container virtualization tools, such as `Docker <https://www.docker.com/>`_
