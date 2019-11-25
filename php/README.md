@@ -1,14 +1,14 @@
 # Supported tags and respective `Dockerfile` links
 
--	[`7.3-cli`, `7-cli`, `cli`, `7.3`, `7`, `latest` (*7.3/stretch/cli/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.3/stretch/cli/Dockerfile)
--	[`7.3-apache`, `7-apache`, `apache` (*7.3/stretch/apache/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.3/stretch/apache/Dockerfile)
--	[`7.3-fpm`, `7-fpm`, `fpm` (*7.3/stretch/fpm/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.3/stretch/fpm/Dockerfile)
--	[`7.2-cli`, `7.2` (*7.2/stretch/cli/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.2/stretch/cli/Dockerfile)
--	[`7.2-apache` (*7.2/stretch/apache/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.2/stretch/apache/Dockerfile)
--	[`7.2-fpm` (*7.2/stretch/fpm/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.2/stretch/fpm/Dockerfile)
--	[`7.1-cli`, `7.1` (*7.1/stretch/cli/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.1/stretch/cli/Dockerfile)
--	[`7.1-apache` (*7.1/stretch/apache/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.1/stretch/apache/Dockerfile)
--	[`7.1-fpm` (*7.1/stretch/fpm/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.1/stretch/fpm/Dockerfile)
+-	[`7.3-cli`, `7-cli`, `cli`, `7.3`, `7`, `latest` (*7.3/buster/cli/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.3/buster/cli/Dockerfile)
+-	[`7.3-apache`, `7-apache`, `apache` (*7.3/buster/apache/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.3/buster/apache/Dockerfile)
+-	[`7.3-fpm`, `7-fpm`, `fpm` (*7.3/buster/fpm/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.3/buster/fpm/Dockerfile)
+-	[`7.2-cli`, `7.2` (*7.2/buster/cli/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.2/buster/cli/Dockerfile)
+-	[`7.2-apache` (*7.2/buster/apache/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.2/buster/apache/Dockerfile)
+-	[`7.2-fpm` (*7.2/buster/fpm/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.2/buster/fpm/Dockerfile)
+-	[`7.1-cli`, `7.1` (*7.1/buster/cli/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.1/buster/cli/Dockerfile)
+-	[`7.1-apache` (*7.1/buster/apache/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.1/buster/apache/Dockerfile)
+-	[`7.1-fpm` (*7.1/buster/fpm/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.1/buster/fpm/Dockerfile)
 
 # Quick reference
 
@@ -118,4 +118,4 @@ More environment variables may be provided by PHP, PHP-FPM, Apache or the PHP ex
 # Image Variants
 
 See the description of the [official PHP images](https://hub.docker.com/_/php). Only
-variants for FPM, CLI and Apache are provided. Only variants based on Debian stretch are provided.
+variants for FPM, CLI and Apache are provided. Only variants based on Debian buster are provided.
