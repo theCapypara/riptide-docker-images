@@ -31,10 +31,17 @@ RUN requirements="msmtp libmcrypt-dev libwebp-dev libmcrypt4 libcurl3-dev libfre
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install xdebug (based on https://gist.github.com/chadrien/c90927ec2d160ffea9c4)
-RUN yes | pecl install xdebug \
-    && echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > /usr/local/etc/php/conf.d/xdebug.ini \
-    && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
-    && echo "xdebug.remote_autostart=off" >> /usr/local/etc/php/conf.d/xdebug.ini
+RUN yes | pecl install xdebug
+
+# Riptide no longer enabled xdebug in it's image, for performance reasons.
+# Please mount
+# For Riptide < 0.6: The PHP commands/services in the Riptide Community Repository mount these settings already
+# For Riptide >= 0.6: Use the plugin riptide-plugin-php-xdebug to toggle Xdebug.
+#
+# Previously these were the settings for Xdebug:
+#&& echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > /usr/local/etc/php/conf.d/xdebug.ini \
+#&& echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
+#&& echo "xdebug.remote_autostart=off" >> /usr/local/etc/php/conf.d/xdebug.ini
 
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php \

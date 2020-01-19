@@ -1,8 +1,11 @@
 # Supported tags and respective `Dockerfile` links
 
--	[`7.3-cli`, `7-cli`, `cli`, `7.3`, `7`, `latest` (*7.3/buster/cli/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.3/buster/cli/Dockerfile)
--	[`7.3-apache`, `7-apache`, `apache` (*7.3/buster/apache/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.3/buster/apache/Dockerfile)
--	[`7.3-fpm`, `7-fpm`, `fpm` (*7.3/buster/fpm/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.3/buster/fpm/Dockerfile)
+-	[`7.4-cli`, `7-cli`, `cli`, `7.4`, `7`, `latest` (*7.4/buster/cli/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.3/buster/cli/Dockerfile)
+-	[`7.4-apache`, `7-apache`, `apache` (*7.4/buster/apache/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.3/buster/apache/Dockerfile)
+-	[`7.4-fpm`, `7-fpm`, `fpm` (*7.4/buster/fpm/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.3/buster/fpm/Dockerfile)
+-	[`7.3-cli`, `7.3`, (*7.3/buster/cli/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.3/buster/cli/Dockerfile)
+-	[`7.3-apache`, (*7.3/buster/apache/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.3/buster/apache/Dockerfile)
+-	[`7.3-fpm`, (*7.3/buster/fpm/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.3/buster/fpm/Dockerfile)
 -	[`7.2-cli`, `7.2` (*7.2/buster/cli/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.2/buster/cli/Dockerfile)
 -	[`7.2-apache` (*7.2/buster/apache/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.2/buster/apache/Dockerfile)
 -	[`7.2-fpm` (*7.2/buster/fpm/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/php/7.2/buster/fpm/Dockerfile)
@@ -31,7 +34,7 @@ php images based on the [official PHP images](https://hub.docker.com/_/php).
 These images work like their official counterpart, but:
 
 - They include the following PHP extensions (additional may be installed by default, depending on PHP version):
-  - xdebug (enabled via XDEBUG_CONFIG, see below)
+  - xdebug (not loaded by default & and controlled via XDEBUG_CONFIG, see below)
   - pdo_mysql
   - gd
   - mbstring
@@ -54,6 +57,15 @@ These images work like their official counterpart, but:
 - msmtp is installed by default to be used with a mailcatcher. It is configured in the php.ini but no msmtprc
   file is present. If you want to use msmtp, create an "/etc/msmtprc".
 - Includes an SSH client
+
+Xdebug is not loaded by default for performance reasons. If you want
+to enable Xdebug, add the following lines to the file ``/usr/local/etc/php/conf.d/xdebug.ini`` via a new image or mount:
+```ini
+zend_extension=xdebug.so
+xdebug.remote_enable=on
+xdebug.remote_autostart=off
+```
+
 
 This image is meant for developers using PHP. If you are missing any extensions
 or tools, be sure to open a [pull request](https://github.com/Parakoopa/riptide-docker-images/pulls).
