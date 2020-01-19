@@ -5,7 +5,7 @@ FROM php
 # Some parts are based on https://hub.docker.com/r/alexcheng/magento2/dockerfile
 
 # PHP extensions and msmtp
-RUN requirements="msmtp libmcrypt-dev libwebp-dev libmcrypt4 libcurl3-dev libfreetype6 libjpeg62-turbo libjpeg62-turbo-dev libpng-dev libxpm-dev libfreetype6-dev libicu-dev libxslt1-dev unzip libbz2-dev libzip-dev openssh-client" \
+RUN requirements="msmtp libmcrypt-dev libwebp-dev libmcrypt4 libcurl3-dev libfreetype6 libjpeg62-turbo libjpeg62-turbo-dev libpng-dev libxpm-dev libfreetype6-dev libicu-dev libxslt1-dev unzip libbz2-dev libzip-dev openssh-client libonig-dev" \
     && apt-get update \
     && apt-get install -y $requirements \
     && docker-php-ext-install pdo_mysql \
@@ -26,7 +26,7 @@ RUN requirements="msmtp libmcrypt-dev libwebp-dev libmcrypt4 libcurl3-dev libfre
         --with-png-dir --with-zlib-dir --with-xpm-dir --with-freetype-dir \
         --enable-gd-native-ttf \
     && docker-php-ext-install gd \
-    && requirementsToRemove="libmcrypt-dev libwebp-dev libcurl3-dev libpng-dev libfreetype6-dev libjpeg62-turbo-dev libxpm-dev libbz2-dev libzip-dev" \
+    && requirementsToRemove="libmcrypt-dev libwebp-dev libcurl3-dev libpng-dev libfreetype6-dev libjpeg62-turbo-dev libxpm-dev libbz2-dev libzip-dev libonig-dev" \
     && apt-get purge -y $requirementsToRemove \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
