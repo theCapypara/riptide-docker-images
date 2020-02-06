@@ -36,6 +36,7 @@ These images work like their official counterpart, but:
 - They include the following PHP extensions (additional may be installed by default, depending on PHP version):
   - xdebug (not loaded by default & and controlled via XDEBUG_CONFIG, see below)
   - pdo_mysql
+  - mysqli
   - gd
   - mbstring
   - soap
