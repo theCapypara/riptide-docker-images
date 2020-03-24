@@ -50,6 +50,7 @@ These images work like their official counterpart, but:
   - tokenizer
   - bcmath
   - bz2
+  - sockets
 - They include the following tools for developing with common PHP applications and Frameworks
   - [Composer](https://getcomposer.org/)
   - [wp-cli](https://wp-cli.org/)
