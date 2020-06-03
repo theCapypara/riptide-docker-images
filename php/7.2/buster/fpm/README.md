@@ -50,6 +50,7 @@ These images work like their official counterpart, but:
   - tokenizer
   - bcmath
   - bz2
+  - sockets
 - They include the following tools for developing with common PHP applications and Frameworks
   - [Composer](https://getcomposer.org/)
   - [wp-cli](https://wp-cli.org/)
@@ -58,6 +59,7 @@ These images work like their official counterpart, but:
 - msmtp is installed by default to be used with a mailcatcher. It is configured in the php.ini but no msmtprc
   file is present. If you want to use msmtp, create an "/etc/msmtprc".
 - Includes an SSH client
+- Includes Git
 
 Xdebug is not loaded by default for performance reasons. If you want
 to enable Xdebug, add the following lines to the file ``/usr/local/etc/php/conf.d/xdebug.ini`` via a new image or mount:
