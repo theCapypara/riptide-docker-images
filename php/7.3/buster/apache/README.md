@@ -56,6 +56,7 @@ These images work like their official counterpart, but:
   - [wp-cli](https://wp-cli.org/)
   - [n98-magerun](https://github.com/netz98/n98-magerun)
   - [n98-magerun2](https://github.com/netz98/n98-magerun2)
+  - [Symfony CLI](https://symfony.com/)
 - msmtp is installed by default to be used with a mailcatcher. It is configured in the php.ini but no msmtprc
   file is present. If you want to use msmtp, create an "/etc/msmtprc".
 - Includes an SSH client

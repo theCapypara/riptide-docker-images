@@ -69,6 +69,12 @@ RUN curl -O https://files.magerun.net/n98-magerun2.phar \
     && ln -s /usr/local/bin/n98-magerun2.phar /usr/local/bin/mr2 \
     && ln -s /usr/local/bin/n98-magerun2.phar /usr/local/bin/magerun2
 
+## Symfony
+RUN curl -O https://get.symfony.com/cli/installer \
+    && chmod +x ./installer \
+    && ./installer --install-dir /usr/local/bin \
+    && rm ./installer
+
 # Additional settings
 # || true for non-apache variants
 RUN a2enmod rewrite || true \
