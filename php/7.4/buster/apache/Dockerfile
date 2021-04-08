@@ -44,7 +44,7 @@ RUN yes | pecl install xdebug
 #&& echo "xdebug.remote_autostart=off" >> /usr/local/etc/php/conf.d/xdebug.ini
 
 # Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --version=1.10.19 \
+RUN curl -sS https://getcomposer.org/installer | php -- --1 \
     && mv composer.phar /usr/local/bin/composer
 
 # wp-cli
