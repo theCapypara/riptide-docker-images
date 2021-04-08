@@ -34,7 +34,7 @@ RUN requirements="msmtp libmcrypt-dev libwebp-dev libmcrypt4 libcurl3-dev libfre
 RUN yes | pecl install xdebug
 
 # Install MongoDB
-RUN yes | pecl install mongodb
+RUN yes | pecl install mongodb && echo "extension=mongodb.so" > /usr/local/etc/php/conf.d/mongo.ini
 
 # Riptide no longer enabled xdebug in it's image, for performance reasons.
 # Please mount
