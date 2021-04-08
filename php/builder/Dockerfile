@@ -34,6 +34,9 @@ RUN requirements="msmtp libmcrypt-dev libwebp-dev libmcrypt4 libcurl3-dev libfre
 # Install xdebug (based on https://gist.github.com/chadrien/c90927ec2d160ffea9c4)
 RUN yes | pecl install xdebug
 
+# Install MongoDB
+RUN yes | pecl install mongodb
+
 # Riptide no longer enabled xdebug in it's image, for performance reasons.
 # Please mount
 # For Riptide < 0.6: The PHP commands/services in the Riptide Community Repository mount these settings already
