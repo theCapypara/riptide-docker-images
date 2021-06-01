@@ -4,7 +4,7 @@ FROM php:7.4-cli-buster
 # Some parts are based on https://hub.docker.com/r/alexcheng/magento2/dockerfile
 
 # PHP extensions and msmtp
-RUN requirements="msmtp libmcrypt-dev libwebp-dev libmcrypt4 libcurl3-dev libfreetype6 libjpeg62-turbo libjpeg62-turbo-dev libpng-dev libxpm-dev libfreetype6-dev libicu-dev libxslt1-dev unzip libbz2-dev libzip-dev openssh-client libonig-dev git ssh-askpass" \
+RUN requirements="msmtp libmcrypt-dev libwebp-dev libmcrypt4 libcurl3-dev libfreetype6 libjpeg62-turbo libjpeg62-turbo-dev libpng-dev libxpm-dev libfreetype6-dev libicu-dev libxslt1-dev unzip libbz2-dev libzip-dev openssh-client libonig-dev git ssh-askpass libssl-dev" \
     && apt-get update \
     && apt-get install -y $requirements \
     && docker-php-ext-install pdo_mysql \
