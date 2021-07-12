@@ -10,17 +10,10 @@ RUN requirements="msmtp libmcrypt-dev libwebp-dev libmcrypt4 libcurl3-dev libfre
     && apt-get install -y $requirements \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install mysqli \
-    && docker-php-ext-install mbstring \
     && docker-php-ext-install soap \
     && docker-php-ext-install xsl \
     && docker-php-ext-install zip \
     && docker-php-ext-install intl \
-    && docker-php-ext-install ctype \
-    && docker-php-ext-install iconv \
-    && docker-php-ext-install json \
-    && docker-php-ext-install session \
-    && docker-php-ext-install simplexml \
-    && docker-php-ext-install tokenizer \
     && docker-php-ext-install bcmath \
     && docker-php-ext-install bz2 \
     && docker-php-ext-install sockets \

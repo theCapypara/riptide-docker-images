@@ -9,21 +9,14 @@ RUN requirements="msmtp libmcrypt-dev libwebp-dev libmcrypt4 libcurl3-dev libfre
     && apt-get install -y $requirements \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install mysqli \
-    && docker-php-ext-install mbstring \
     && docker-php-ext-install soap \
     && docker-php-ext-install xsl \
     && docker-php-ext-install zip \
     && docker-php-ext-install intl \
-    && docker-php-ext-install ctype \
-    && docker-php-ext-install iconv \
-    && docker-php-ext-install json \
-    && docker-php-ext-install session \
-    && docker-php-ext-install simplexml \
-    && docker-php-ext-install tokenizer \
     && docker-php-ext-install bcmath \
     && docker-php-ext-install bz2 \
     && docker-php-ext-install sockets \
-    && docker-php-ext-configure gd --with-gd --with-webp-dir --with-jpeg-dir --with-png-dir --with-zlib-dir --with-xpm-dir --with-freetype-dir \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd \
     && requirementsToRemove="libmcrypt-dev libwebp-dev libcurl3-dev libpng-dev libfreetype6-dev libjpeg62-turbo-dev libxpm-dev libbz2-dev libzip-dev libonig-dev" \
     && apt-get purge -y $requirementsToRemove \

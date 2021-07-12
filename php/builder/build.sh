@@ -11,7 +11,7 @@ for goal in */*/*/; do
     variant="${parts[2]}"
 
     # GD options for various PHP versions
-    if [[ "7.4" == "$version" ]]
+    if [[ "7.4" == "$version" ||  "8.0" == "$version" ]]
     then
         GD_OPTIONS="--with-freetype --with-jpeg"
     else
@@ -26,7 +26,12 @@ for goal in */*/*/; do
     echo "FROM php:$version-$variant-$base" >> "$version/$base/$variant/Dockerfile"
 
     # Read base Dockefile, first three lines are skipped.
-    tail -n +4 builder/Dockerfile >> "$version/$base/$variant/Dockerfile"
+    if [[ $version == 7* ]]
+    then
+       tail -n +4 builder/Dockerfile-pre-8 >> "$version/$base/$variant/Dockerfile"
+    else
+       tail -n +4 builder/Dockerfile >> "$version/$base/$variant/Dockerfile"
+      fi
     sed -e "s/\@@gd_requirements@@/$GD_OPTIONS/" -i "$version/$base/$variant/Dockerfile"
 
     # If apache: Copy Vhost and add it
