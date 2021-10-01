@@ -1,0 +1,116 @@
+
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+       include:
+         - path: php/8.0/buster/cli
+           tags:
+             - riptidepy/php:8.0-cli
+             - riptidepy/php:8-cli
+             - riptidepy/php:cli
+             - riptidepy/php:8.0
+             - riptidepy/php:8
+             - riptidepy/php:latest
+         - path: php/8.0/buster/apache
+           tags:
+             - riptidepy/php:8.0-apache
+             - riptidepy/php:8-apache
+             - riptidepy/php:apache
+         - path: php/8.0/buster/fpm
+           tags:
+             - riptidepy/php:8.0-fpm
+             - riptidepy/php:8-fpm
+             - riptidepy/php:fpm
+         - path: php/7.4/buster/cli
+           tags:
+             - riptidepy/php:7.4-cli
+             - riptidepy/php:7-cli
+             - riptidepy/php:7.4
+             - riptidepy/php:7
+         - path: php/7.4/buster/apache
+           tags:
+             - riptidepy/php:7.4-apache
+             - riptidepy/php:7-apache
+         - path: php/7.4/buster/fpm
+           tags:
+             - riptidepy/php:7.4-fpm
+             - riptidepy/php:7-fpm
+         - path: php/7.3/buster/cli
+           tags:
+             - riptidepy/php:7.3-cli
+             - riptidepy/php:7.3
+         - path: php/7.3/buster/apache
+           tags:
+             - riptidepy/php:7.3-apache
+         - path: php/7.3/buster/fpm
+           tags:
+             - riptidepy/php:7.3-fpm
+         - path: php/7.2/buster/cli
+           tags:
+             - riptidepy/php:7.2-cli
+             - riptidepy/php:7.2
+         - path: php/7.2/buster/apache
+           tags:
+             - riptidepy/php:7.2-apache
+         - path: php/7.2/buster/fpm
+           tags:
+             - riptidepy/php:7.2-fpm
+         - path: php/7.1/buster/cli
+           tags:
+             - riptidepy/php:7.1-cli
+             - riptidepy/php:7.1
+         - path: php/7.1/buster/apache
+           tags:
+             - riptidepy/php:7.1-apache
+         - path: php/7.1/buster/fpm
+           tags:
+             - riptidepy/php:7.1-fpm
+         - path: sphinx
+           tags:
+             - riptidepy/sphinx:latest
+    name: Build Image
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          context: "${{ matrix.path }}"
+          tags: "${{ join(matrix.tags, ',') }}"
+  description:
+    runs-on: ubuntu-latest
+    name: Update description
+    strategy:
+      matrix:
+        include:
+         - path: php
+           repository: riptidepy/php
+         - path: sphinx
+           repository: riptidepy/sphinx
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Update description
+        uses: peter-evans/dockerhub-description@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          readme-filepath: "${{ matrix.path }}/README.md"
+          repository: ${{ matrix.repository }}

@@ -37,7 +37,7 @@ php images based on the [official PHP images](https://hub.docker.com/_/php).
 These images work like their official counterpart, but:
 
 - They include the following PHP extensions (additional may be installed by default, depending on PHP version):
-  - xdebug (not loaded by default & and controlled via XDEBUG_CONFIG, see below)
+  - xdebug 3 (not loaded by default & and controlled via XDEBUG_CONFIG, see below)
   - pdo_mysql
   - mysqli
   - gd
@@ -125,7 +125,7 @@ See the description of the [official PHP images](https://hub.docker.com/_/php).
 |-----------------|----------|-------------------------------------|---------------------------------------------------------------------|
 | APACHE_RUN_USER | see desc.| #1000 / #{{ os_user() }} (Riptide)  | (apache only) ID of the user that Apache should switch to           |   
 | APACHE_RUN_GROUP| see desc.| #1000 / #{{ os_group() }} (Riptide) | (apache only) ID of the group that the main command should switch to|
-| XDEBUG_CONFIG   | no       | remote_host={{ host_address() }}    | [Xdebug configuration](https://xdebug.org/docs/remote)              |
+| XDEBUG_CONFIG   | no       | client_host={{ host_address() }}    | [Xdebug configuration](https://xdebug.org/docs/remote)              |
 | XDEBUG_CONFIG   | no       | serverName=riptide-{{ name }}'      | [PhpStorm path mapping key](https://blog.jetbrains.com/phpstorm/2012/03/new-in-4-0-easier-debugging-of-remote-php-command-line-scripts/)|
 
 More environment variables may be provided by PHP, PHP-FPM, Apache or the PHP extensions.
