@@ -2,6 +2,8 @@
 FROM php
 ##################################################################################
 
+LABEL php_xdebug_version="3"
+
 # Some parts are based on https://hub.docker.com/r/alexcheng/magento2/dockerfile
 
 # PHP extensions and msmtp
