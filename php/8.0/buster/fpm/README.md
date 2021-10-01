@@ -12,9 +12,6 @@
 -	[`7.2-cli`, `7.2` (*7.2/buster/cli/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/php/7.2/buster/cli/Dockerfile)
 -	[`7.2-apache` (*7.2/buster/apache/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/php/7.2/buster/apache/Dockerfile)
 -	[`7.2-fpm` (*7.2/buster/fpm/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/php/7.2/buster/fpm/Dockerfile)
--	[`7.1-cli`, `7.1` (*7.1/buster/cli/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/php/7.1/buster/cli/Dockerfile)
--	[`7.1-apache` (*7.1/buster/apache/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/php/7.1/buster/apache/Dockerfile)
--	[`7.1-fpm` (*7.1/buster/fpm/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/php/7.1/buster/fpm/Dockerfile)
 
 # Quick reference
 

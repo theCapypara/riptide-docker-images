@@ -66,16 +66,6 @@ jobs:
          - path: php/7.2/buster/fpm
            tags:
              - riptidepy/php:7.2-fpm
-         - path: php/7.1/buster/cli
-           tags:
-             - riptidepy/php:7.1-cli
-             - riptidepy/php:7.1
-         - path: php/7.1/buster/apache
-           tags:
-             - riptidepy/php:7.1-apache
-         - path: php/7.1/buster/fpm
-           tags:
-             - riptidepy/php:7.1-fpm
          - path: sphinx
            tags:
              - riptidepy/sphinx:latest
