@@ -1,8 +1,9 @@
 |Riptide|
 =========
 
-.. |Riptide| image:: https://riptide-docs.readthedocs.io/en/latest/_images/logo.png
-    :alt: Riptide
+.. |build| image:: https://img.shields.io/github/workflow/status/Parakoopa/riptide-docker-images/build
+    :target: https://github.com/Parakoopa/riptide-docker-images/actions
+    :alt: Build Status
 
 .. class:: center
 
