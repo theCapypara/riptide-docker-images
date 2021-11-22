@@ -6,7 +6,7 @@ LABEL php_xdebug_version="3"
 # Some parts are based on https://hub.docker.com/r/alexcheng/magento2/dockerfile
 
 # PHP extensions and msmtp
-RUN requirements="msmtp libmcrypt-dev libwebp-dev libmcrypt4 libcurl3-dev libfreetype6 libjpeg62-turbo libjpeg62-turbo-dev libpng-dev libxpm-dev libfreetype6-dev libicu-dev libxslt1-dev unzip libbz2-dev libzip-dev openssh-client libonig-dev git ssh-askpass libssl-dev" \
+RUN requirements="msmtp libmcrypt-dev libwebp-dev libmcrypt4 libcurl3-dev libfreetype6 libjpeg62-turbo libjpeg62-turbo-dev libpng-dev libxpm-dev libfreetype6-dev libicu-dev libxslt1-dev unzip libbz2-dev libzip-dev openssh-client libonig-dev git ssh-askpass libssl-dev libyaml-dev" \
     && apt-get update \
     && apt-get install -y $requirements \
     && docker-php-ext-install pdo_mysql \
@@ -30,6 +30,9 @@ RUN yes | pecl install xdebug
 
 # Install MongoDB
 RUN yes | pecl install mongodb && echo "extension=mongodb.so" > /usr/local/etc/php/conf.d/mongo.ini
+
+# Install yaml
+RUN yes | pecl install yaml && echo "extension=yaml.so" > /usr/local/etc/php/conf.d/ext-yaml.ini
 
 # Riptide no longer enabled xdebug in it's image, for performance reasons.
 # Please mount
