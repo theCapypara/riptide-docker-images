@@ -21,6 +21,7 @@ RUN requirements="msmtp libmcrypt-dev libwebp-dev libmcrypt4 libcurl3-dev libfre
     && docker-php-ext-install sockets \
     && docker-php-ext-configure gd @@gd_requirements@@ \
     && docker-php-ext-install gd \
+    && docker-php-ext-install exif \
     && requirementsToRemove="libmcrypt-dev libwebp-dev libcurl3-dev libpng-dev libfreetype6-dev libjpeg62-turbo-dev libxpm-dev libbz2-dev libzip-dev libonig-dev" \
     && apt-get purge -y $requirementsToRemove \
     && apt-get clean \
