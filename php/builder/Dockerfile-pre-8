@@ -7,7 +7,7 @@ LABEL php_xdebug_version="3"
 # Some parts are based on https://hub.docker.com/r/alexcheng/magento2/dockerfile
 
 # PHP extensions and msmtp
-RUN requirements="msmtp libmcrypt-dev libwebp-dev libmcrypt4 libcurl3-dev libfreetype6 libjpeg62-turbo libjpeg62-turbo-dev libpng-dev libxpm-dev libfreetype6-dev libicu-dev libxslt1-dev unzip libbz2-dev libzip-dev openssh-client libonig-dev git ssh-askpass libssl-dev" \
+RUN requirements="msmtp libmcrypt-dev libwebp-dev libmcrypt4 libcurl3-dev libfreetype6 libjpeg62-turbo libjpeg62-turbo-dev libpng-dev libxpm-dev libfreetype6-dev libicu-dev libxslt1-dev unzip libbz2-dev libzip-dev openssh-client libonig-dev git ssh-askpass libssl-dev libyaml-dev" \
     && apt-get update \
     && apt-get install -y $requirements \
     && docker-php-ext-install pdo_mysql \
@@ -53,9 +53,13 @@ RUN yes | pecl install yaml && echo "extension=yaml.so" > /usr/local/etc/php/con
 #&& echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
 #&& echo "xdebug.remote_autostart=off" >> /usr/local/etc/php/conf.d/xdebug.ini
 
-# Composer
+# Composer 1
 RUN curl -sS https://getcomposer.org/installer | php -- --1 \
     && mv composer.phar /usr/local/bin/composer
+
+# Composer 2
+RUN curl -sS https://getcomposer.org/installer | php \
+    && mv composer.phar /usr/local/bin/composer2
 
 # wp-cli
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \

@@ -47,9 +47,13 @@ RUN yes | pecl install yaml && echo "extension=yaml.so" > /usr/local/etc/php/con
 #&& echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
 #&& echo "xdebug.remote_autostart=off" >> /usr/local/etc/php/conf.d/xdebug.ini
 
-# Composer
+# Composer 1
 RUN curl -sS https://getcomposer.org/installer | php -- --1 \
     && mv composer.phar /usr/local/bin/composer
+
+# Composer 2
+RUN curl -sS https://getcomposer.org/installer | php \
+    && mv composer.phar /usr/local/bin/composer2
 
 # wp-cli
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \

@@ -54,6 +54,8 @@ These images work like their official counterpart, but:
   - yaml
 - They include the following tools for developing with common PHP applications and Frameworks
   - [Composer](https://getcomposer.org/)
+    - Composer 1 as `composer`
+    - Composer 2 as `composer2`
   - [wp-cli](https://wp-cli.org/)
   - [n98-magerun](https://github.com/netz98/n98-magerun)
   - [n98-magerun2](https://github.com/netz98/n98-magerun2)
