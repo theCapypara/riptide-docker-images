@@ -14,7 +14,7 @@ jobs:
       fail-fast: false
       matrix:
        include:
-         - path: php/8.1/buster/cli
+         - path: php/8.1/buster/cli-composer
            tags:
              - riptidepy/php:8.1-cli
              - riptidepy/php:8-cli
@@ -37,7 +37,7 @@ jobs:
              - riptidepy/php:8.1-fpm
              - riptidepy/php:8-fpm
              - riptidepy/php:fpm
-         - path: php/8.0/buster/cli
+         - path: php/8.0/buster/cli-composer
            tags:
              - riptidepy/php:8.0-cli
              - riptidepy/php:8.0
@@ -50,7 +50,7 @@ jobs:
          - path: php/8.0/buster/fpm
            tags:
              - riptidepy/php:8.0-fpm
-         - path: php/7.4/buster/cli
+         - path: php/7.4/buster/cli-composer
            tags:
              - riptidepy/php:7.4-cli
              - riptidepy/php:7-cli
@@ -67,7 +67,7 @@ jobs:
            tags:
              - riptidepy/php:7.4-fpm
              - riptidepy/php:7-fpm
-         - path: php/7.3/buster/cli
+         - path: php/7.3/buster/cli-composer
            tags:
              - riptidepy/php:7.3-cli
              - riptidepy/php:7.3
@@ -80,7 +80,7 @@ jobs:
          - path: php/7.3/buster/fpm
            tags:
              - riptidepy/php:7.3-fpm
-         - path: php/7.2/buster/cli
+         - path: php/7.2/buster/cli-composer
            tags:
              - riptidepy/php:7.2-cli
              - riptidepy/php:7.2
