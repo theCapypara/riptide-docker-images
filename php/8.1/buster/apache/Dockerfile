@@ -5,9 +5,6 @@ LABEL php_xdebug_version="3"
 
 # Some parts are based on https://hub.docker.com/r/alexcheng/magento2/dockerfile
 
-# TEMPOARY MANUAL FIX UNTIL FIXED UPSTREAM
-ENV CFLAGS="$CFLAGS -D_GNU_SOURCE"
-
 # PHP extensions and msmtp
 RUN requirements="msmtp libmcrypt-dev libwebp-dev libmcrypt4 libcurl3-dev libfreetype6 libjpeg62-turbo libjpeg62-turbo-dev libpng-dev libxpm-dev libfreetype6-dev libicu-dev libxslt1-dev unzip libbz2-dev libzip-dev openssh-client libonig-dev git ssh-askpass libssl-dev libyaml-dev" \
     && apt-get update \
@@ -21,6 +18,7 @@ RUN requirements="msmtp libmcrypt-dev libwebp-dev libmcrypt4 libcurl3-dev libfre
     && docker-php-ext-install bcmath \
     && docker-php-ext-install bz2 \
     && docker-php-ext-install sockets \
+    && docker-php-ext-configure gd --with-gd --with-webp-dir --with-jpeg-dir --with-png-dir --with-zlib-dir --with-xpm-dir --with-freetype-dir \
     && docker-php-ext-install gd \
     && docker-php-ext-install exif \
     && docker-php-ext-install opcache \

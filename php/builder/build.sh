@@ -2,7 +2,7 @@
 # Builder script, see README. Run from ..!
 # This is not run by CI. Run manually and commit the resulting files.
 
-for goal in */*/*/; do
+for goal in */*/*; do
     goal=${goal%*/} # Remove trailing slash
     IFS='/' read -r -a parts <<< "$goal"
 
@@ -26,12 +26,22 @@ for goal in */*/*/; do
     echo "FROM php:$version-$variant-$base" >> "$version/$base/$variant/Dockerfile"
 
     # Read base Dockefile, first three lines are skipped.
-    if [[ $version == 7* ]]
+    if [[ "cli-composer2" == "$variant" ]]
     then
-       tail -n +4 builder/Dockerfile-pre-8 >> "$version/$base/$variant/Dockerfile"
+        if [[ $version == 7* ]]
+        then
+        tail -n +4 builder/Dockerfile-pre-8-composer2 >> "$version/$base/$variant/Dockerfile"
+        else
+        tail -n +4 builder/Dockerfile-composer2 >> "$version/$base/$variant/Dockerfile"
+        fi
     else
-       tail -n +4 builder/Dockerfile >> "$version/$base/$variant/Dockerfile"
-      fi
+        if [[ $version == 7* ]]
+        then
+        tail -n +4 builder/Dockerfile-pre-8 >> "$version/$base/$variant/Dockerfile"
+        else
+        tail -n +4 builder/Dockerfile >> "$version/$base/$variant/Dockerfile"
+        fi
+    fi
     sed -e "s/\@@gd_requirements@@/$GD_OPTIONS/" -i "$version/$base/$variant/Dockerfile"
 
     # If apache: Copy Vhost and add it

@@ -22,6 +22,11 @@ jobs:
              - riptidepy/php:8.1
              - riptidepy/php:8
              - riptidepy/php:latest
+         - path: php/8.1/buster/cli-composer2
+           tags:
+             - riptidepy/php:8.1-cli-composer2
+             - riptidepy/php:8-cli-composer2
+             - riptidepy/php:cli-composer2
          - path: php/8.1/buster/apache
            tags:
              - riptidepy/php:8.1-apache
@@ -36,6 +41,9 @@ jobs:
            tags:
              - riptidepy/php:8.0-cli
              - riptidepy/php:8.0
+         - path: php/8.0/buster/cli-composer2
+           tags:
+             - riptidepy/php:8.0-cli-composer2
          - path: php/8.0/buster/apache
            tags:
              - riptidepy/php:8.0-apache
@@ -48,6 +56,9 @@ jobs:
              - riptidepy/php:7-cli
              - riptidepy/php:7.4
              - riptidepy/php:7
+         - path: php/7.4/buster/cli-composer2
+           tags:
+             - riptidepy/php:7.4-cli-composer2
          - path: php/7.4/buster/apache
            tags:
              - riptidepy/php:7.4-apache
@@ -60,6 +71,9 @@ jobs:
            tags:
              - riptidepy/php:7.3-cli
              - riptidepy/php:7.3
+         - path: php/7.3/buster/cli-composer2
+           tags:
+             - riptidepy/php:7.3-cli-composer2
          - path: php/7.3/buster/apache
            tags:
              - riptidepy/php:7.3-apache
@@ -70,6 +84,9 @@ jobs:
            tags:
              - riptidepy/php:7.2-cli
              - riptidepy/php:7.2
+         - path: php/7.2/buster/cli-composer2
+           tags:
+             - riptidepy/php:7.2-cli-composer2
          - path: php/7.2/buster/apache
            tags:
              - riptidepy/php:7.2-apache
