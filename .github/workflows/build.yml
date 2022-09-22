@@ -96,6 +96,9 @@ jobs:
          - path: sphinx
            tags:
              - riptidepy/sphinx:latest
+         - path: shopify
+           tags:
+             - riptidepy/shopify:latest
     name: Build Image
     steps:
       - name: Checkout
