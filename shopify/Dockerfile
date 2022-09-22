@@ -141,5 +141,6 @@ RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar \
   && yarn --version
 
 RUN apk --no-cache add gettext git htop tree
+COPY Makefile riptide.md /assets/
 COPY entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["entrypoint.sh"]

@@ -22,8 +22,6 @@
 
 # How to use this image.
 
-<!-- General usage notes. After this, keep the following text: -->
-
 This image is meant to be used with [Riptide](https://github.com/theCapypara/riptide-cli). 
 Using it without Riptide is probably possible, but not supported.
 
