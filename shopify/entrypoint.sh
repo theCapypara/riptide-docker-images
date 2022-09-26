@@ -20,10 +20,14 @@ if [ "${1#-}" != "${1}" ] || [ -z "$(command -v "${1}")" ] || { [ -f "${1}" ] &&
   set -- node "$@"
 fi
 
-# Keep Makefile up to date
+# Keep Makefile and documentation up to date
 RIPTIDE_SRC="/src/"
 if [ -d "$RIPTIDE_SRC" ]; then
-  cp /assets/Makefile "$RIPTIDE_SRC"
+  cp /assets/base.makefile "$RIPTIDE_SRC"
+  if [ ! -f "$RIPTIDE_SRC""Makefile" ]; then
+    cp /assets/Makefile "$RIPTIDE_SRC"
+  fi
+  cp /assets/shopify-app.md "$RIPTIDE_SRC"
 fi
 
 exec "$@"
