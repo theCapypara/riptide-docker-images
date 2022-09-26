@@ -20,4 +20,10 @@ if [ "${1#-}" != "${1}" ] || [ -z "$(command -v "${1}")" ] || { [ -f "${1}" ] &&
   set -- node "$@"
 fi
 
+# Keep Makefile up to date
+RIPTIDE_SRC="/src/"
+if [ -d "$RIPTIDE_SRC" ]; then
+  cp /assets/Makefile "$RIPTIDE_SRC"
+fi
+
 exec "$@"
