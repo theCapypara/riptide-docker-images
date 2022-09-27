@@ -80,6 +80,7 @@ install-nodejs: ## install dev environment for nodejs
 define dev-container-run-cmd
 	@docker run --rm -it \
 		-u $(DOCKER_USER) \
+		--network=host \
 		-v ~/.config/composer:/home/$(DOCKER_USER)/.config/composer \
 		-v ~/.cache/composer:/home/$(DOCKER_USER)/.cache/composer \
 		-v ~/.config/shopify-cli-kit-nodejs:/home/$(DOCKER_USER)/.config/shopify-cli-kit-nodejs \
