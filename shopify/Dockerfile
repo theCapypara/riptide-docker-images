@@ -10,7 +10,8 @@ RUN apk add --no-cache \
     openrc \
     bash \
     postgresql-libs \
-    ruby libzip-dev
+    ruby libzip-dev \
+    gcompat
 
 # add build dependencies
 RUN apk add --no-cache -t .build-deps \
