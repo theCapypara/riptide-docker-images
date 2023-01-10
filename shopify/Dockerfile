@@ -10,7 +10,8 @@ RUN apk add --no-cache \
     openrc \
     bash \
     postgresql-libs \
-    ruby libzip-dev \
+    ruby ruby-dev libzip-dev \
+    alpine-sdk \
     gcompat
 
 # add build dependencies
