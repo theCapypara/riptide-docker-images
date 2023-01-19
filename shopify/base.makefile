@@ -54,6 +54,7 @@ create-php:  ## newly create app from php template
 	$(move-from-subdir-cmd)
 
 install-php: init-directories ## install dev environment for php
+	@$(RIPTIDE_BIN) cmd yarn install
 	@export RIPTIDE_DONT_SHOW_EXEC_WARNING=1 && \
 	$(RIPTIDE_BIN) start -s $(RIPTIDE_SERVICE) -c keep_running && \
 	$(RIPTIDE_BIN) exec --command "cp $(RIPTIDE_SOURCE)/web/.env.example $(RIPTIDE_SOURCE)/web/.env" $(RIPTIDE_SERVICE) && \
