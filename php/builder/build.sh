@@ -11,7 +11,7 @@ for goal in */*/*; do
     variant="${parts[2]}"
 
     # GD options for various PHP versions
-    if [[ "7.4" == "$version" ||  "8.0" == "$version" ]]
+    if [[ "7.4" == "$version" ||  "8.0" == "$version" ||  "8.1" == "$version" ||  "8.2" == "$version" ]]
     then
         GD_OPTIONS="--with-freetype --with-jpeg"
     else

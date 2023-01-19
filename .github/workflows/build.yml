@@ -14,29 +14,42 @@ jobs:
       fail-fast: false
       matrix:
        include:
+         - path: php/8.2/buster/cli-composer
+           tags:
+             - riptidepy/php:8.2-cli
+             - riptidepy/php:8-cli
+             - riptidepy/php:cli
+             - riptidepy/php:8.2
+             - riptidepy/php:8
+             - riptidepy/php:latest
+         - path: php/8.2/buster/cli-composer2
+           tags:
+             - riptidepy/php:8.2-cli-composer2
+             - riptidepy/php:8-cli-composer2
+             - riptidepy/php:cli-composer2
+         - path: php/8.2/buster/apache
+           tags:
+             - riptidepy/php:8.2-apache
+             - riptidepy/php:8-apache
+             - riptidepy/php:apache
+         - path: php/8.2/buster/fpm
+           tags:
+             - riptidepy/php:8.2-fpm
+             - riptidepy/php:8-fpm
+             - riptidepy/php:fpm
          - path: php/8.1/buster/cli-composer
            tags:
              - riptidepy/php:8.1-cli
-             - riptidepy/php:8-cli
-             - riptidepy/php:cli
              - riptidepy/php:8.1
-             - riptidepy/php:8
-             - riptidepy/php:latest
          - path: php/8.1/buster/cli-composer2
            tags:
              - riptidepy/php:8.1-cli-composer2
-             - riptidepy/php:8-cli-composer2
-             - riptidepy/php:cli-composer2
          - path: php/8.1/buster/apache
            tags:
              - riptidepy/php:8.1-apache
-             - riptidepy/php:8-apache
-             - riptidepy/php:apache
          - path: php/8.1/buster/fpm
            tags:
              - riptidepy/php:8.1-fpm
-             - riptidepy/php:8-fpm
-             - riptidepy/php:fpm
          - path: php/8.0/buster/cli-composer
            tags:
              - riptidepy/php:8.0-cli
