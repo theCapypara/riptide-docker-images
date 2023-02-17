@@ -17,6 +17,7 @@ RUN apk add --no-cache \
 # add build dependencies
 RUN apk add --no-cache -t .build-deps \
     postgresql-dev \
+    libxml2-dev \
     autoconf g++ make && \
 # install bundler for extension deployment
     gem install bundler && \
@@ -28,6 +29,7 @@ RUN apk add --no-cache -t .build-deps \
     echo 'xdebug.start_with_request=yes' >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && \
 # further php configuration and permissions
     docker-php-ext-configure pdo_mysql && docker-php-ext-install pdo_mysql && \
+    docker-php-ext-configure simplexml && docker-php-ext-install simplexml && \
     docker-php-ext-configure pgsql && docker-php-ext-install pdo_pgsql && \
     docker-php-ext-configure zip && docker-php-ext-install zip && \
     chgrp 1000 /usr/local/etc/php/conf.d/ -R && \
