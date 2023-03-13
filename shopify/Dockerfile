@@ -141,6 +141,12 @@ RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar \
   && yarn --version
 
 RUN apk --no-cache add gettext git htop tree
+
+# Install Rust
+RUN apk --no-cache add rust rust-wasm cargo
+RUN cargo install cargo-wasi --root=/usr/local
+RUN chmod 777 /usr/local/bin
+
 COPY base.makefile Makefile shopify-app.md /assets/
 COPY entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["entrypoint.sh"]
