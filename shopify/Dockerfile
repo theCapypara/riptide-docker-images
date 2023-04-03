@@ -13,6 +13,7 @@ RUN apk add --no-cache \
     ruby ruby-dev libzip-dev \
     alpine-sdk \
     gcompat \
+    icu \
     freetype libjpeg-turbo libpng libwebp
 
 # add build dependencies
