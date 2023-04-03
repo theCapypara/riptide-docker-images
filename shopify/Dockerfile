@@ -12,12 +12,15 @@ RUN apk add --no-cache \
     postgresql-libs \
     ruby ruby-dev libzip-dev \
     alpine-sdk \
-    gcompat
+    gcompat \
+    freetype libjpeg-turbo libpng
 
 # add build dependencies
 RUN apk add --no-cache -t .build-deps \
     postgresql-dev \
     libxml2-dev \
+    icu-dev \
+    freetype-dev libpng-dev libjpeg-turbo-dev \
     autoconf g++ make && \
 # install bundler for extension deployment
     gem install bundler && \
@@ -32,6 +35,8 @@ RUN apk add --no-cache -t .build-deps \
     docker-php-ext-configure simplexml && docker-php-ext-install simplexml && \
     docker-php-ext-configure pgsql && docker-php-ext-install pdo_pgsql && \
     docker-php-ext-configure zip && docker-php-ext-install zip && \
+    docker-php-ext-configure intl && docker-php-ext-install intl && \
+    docker-php-ext-configure gd && docker-php-ext-install gd && \
     chgrp 1000 /usr/local/etc/php/conf.d/ -R && \
     chmod g+w /usr/local/etc/php/conf.d/ -R && \
 # remove build dependencies
