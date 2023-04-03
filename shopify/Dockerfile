@@ -13,14 +13,14 @@ RUN apk add --no-cache \
     ruby ruby-dev libzip-dev \
     alpine-sdk \
     gcompat \
-    freetype libjpeg-turbo libpng
+    freetype libjpeg-turbo libpng libwebp
 
 # add build dependencies
 RUN apk add --no-cache -t .build-deps \
     postgresql-dev \
     libxml2-dev \
     icu-dev \
-    freetype-dev libpng-dev libjpeg-turbo-dev \
+    freetype-dev libpng-dev libjpeg-turbo-dev libwebp-dev \
     autoconf g++ make && \
 # install bundler for extension deployment
     gem install bundler && \
