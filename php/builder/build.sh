@@ -11,12 +11,7 @@ for goal in */*/*; do
     variant="${parts[2]}"
 
     # GD options for various PHP versions
-    if [[ "7.4" == "$version" ||  "8.0" == "$version" ||  "8.1" == "$version" ||  "8.2" == "$version" ]]
-    then
-        GD_OPTIONS="--with-freetype --with-jpeg"
-    else
-        GD_OPTIONS="--with-gd --with-webp-dir --with-jpeg-dir --with-png-dir --with-zlib-dir --with-xpm-dir --with-freetype-dir"
-    fi
+    GD_OPTIONS="--with-freetype --with-jpeg"
 
     if [[ "builder" == "$version" ]]
     then
@@ -37,19 +32,9 @@ for goal in */*/*; do
     # Read base Dockefile, first three lines are skipped.
     if [[ "cli-composer2" == "$variant" ]]
     then
-        if [[ $version == 7* ]]
-        then
-        tail -n +4 builder/Dockerfile-pre-8-composer2 >> "$version/$base/$variant/Dockerfile"
-        else
         tail -n +4 builder/Dockerfile-composer2 >> "$version/$base/$variant/Dockerfile"
-        fi
     else
-        if [[ $version == 7* ]]
-        then
-        tail -n +4 builder/Dockerfile-pre-8 >> "$version/$base/$variant/Dockerfile"
-        else
         tail -n +4 builder/Dockerfile >> "$version/$base/$variant/Dockerfile"
-        fi
     fi
     sed -e "s/\@@gd_requirements@@/$GD_OPTIONS/" -i "$version/$base/$variant/Dockerfile"
 
