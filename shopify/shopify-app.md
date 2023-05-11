@@ -15,6 +15,8 @@ riptide setup
 riptide update
 ```
 
+Note: Make sure riptide is in your PATH (not just an alias to your bin), so it could be found with `which`.
+
 
 ## Create new app
 
@@ -67,6 +69,8 @@ If you have not installed the Riptide shell extensions, prepend `riptide cmd`.
 ```shell
 shopify app dev
 ```
+
+If this quits silently after "Dependencies installed", run `shopify auth logout`, `make init-app` and try again.
 
 
 ## Deploy extensions

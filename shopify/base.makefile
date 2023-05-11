@@ -5,7 +5,7 @@ PROJECT_PATH=$(shell pwd)
 RIPTIDE_BIN=$(shell which riptide)
 RIPTIDE_SERVICE=shopify
 RIPTIDE_SOURCE=/src
-APP_NAME=$(shell printf '%s' "$${PWD##*/}")
+APP_NAME=$(shell basename $(CURDIR))
 DOCKER_IMAGE=riptidepy/shopify:latest
 DOCKER_USER=docker
 
@@ -93,8 +93,13 @@ define dev-container-run-cmd
 		-v ~/.npm:/home/$(DOCKER_USER)/.npm \
 		-v $(shell pwd):$(RIPTIDE_SOURCE) \
 		-w $(RIPTIDE_SOURCE) \
+		--env-file $(shell pwd)/.env \
 		$(DOCKER_IMAGE)
 endef
+
+app-dev: init-directories ## start dev app
+	$(dev-container-run-cmd) \
+		bash -c "./node_modules/.bin/shopify app dev" ||:
 
 init-app: init-directories ## initialize app
 	$(dev-container-run-cmd) \
