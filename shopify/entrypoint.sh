@@ -27,6 +27,9 @@ if [ -d "$RIPTIDE_SRC" ]; then
   if [ ! -f "$RIPTIDE_SRC""Makefile" ]; then
     cp /assets/Makefile "$RIPTIDE_SRC"
   fi
+  if [ ! -f "$RIPTIDE_SRC"".env" ]; then
+    touch "$RIPTIDE_SRC"".env"
+  fi
   cp /assets/shopify-app.md "$RIPTIDE_SRC"
 fi
 
