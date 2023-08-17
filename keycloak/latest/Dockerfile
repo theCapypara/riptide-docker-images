@@ -3,6 +3,9 @@
 
 FROM registry.access.redhat.com/ubi9 AS ubi-micro-build
 
+# util-linux: provides /usr/bin/su
+# shadow-utils: provides /usr/sbin/groupadd
+# gawk: provides /usr/bin/awk
 ARG PACKAGES="util-linux shadow-utils gawk"
 
 RUN mkdir -p /mnt/rootfs
