@@ -29,4 +29,7 @@ RUN ln -s /usr/sbin/groupadd /usr/sbin/addgroup
 # Restore original /etc/group and /etc/passwd file
 COPY --from=keycloak /etc/passwd /etc/group /etc/
 
+# Allow keycloak to login
+RUN usermod -s /bin/bash keycloak
+
 USER keycloak
