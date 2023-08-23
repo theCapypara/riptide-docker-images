@@ -13,22 +13,22 @@ Pay close attention to links and references with §§YOUR_IMAGE_NAME§§.
 
 <!--- Examples (and required formatting): --->
 
--	[`2.4.39`, `2.4`, `2`, `latest` (*2.4/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/§§YOUR_IMAGE_NAME§§/2.4/Dockerfile)
--	[`2.4.39-alpine`, `2.4-alpine`, `2-alpine`, `alpine` (*2.4/alpine/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/§§YOUR_IMAGE_NAME§§/2.4/alpine/Dockerfile)
+-	[`2.4.39`, `2.4`, `2`, `latest` (*2.4/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/§§YOUR_IMAGE_NAME§§/2.4/Dockerfile)
+-	[`2.4.39-alpine`, `2.4-alpine`, `2-alpine`, `alpine` (*2.4/alpine/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/§§YOUR_IMAGE_NAME§§/2.4/alpine/Dockerfile)
 
 # Quick reference
 
 -	**Where to get help**:
-	[the Riptide Docker Images Github Repository](https://github.com/Parakoopa/riptide-docker-images)
+	[the Riptide Docker Images Github Repository](https://github.com/theCapypara/riptide-docker-images)
 
 -	**Where to file issues**:
-	[https://github.com/Parakoopa/riptide-docker-images/issues](https://github.com/Parakoopa/riptide-docker-images/issues)
+	[https://github.com/theCapypara/riptide-docker-images/issues](https://github.com/theCapypara/riptide-docker-images/issues)
 
 -	**Maintained by**:
-	[the Riptide Community](https://github.com/Parakoopa/riptide-docker-images)
+	[the Riptide Community](https://github.com/theCapypara/riptide-docker-images)
 
 -	**Source of this description**:
-	[README in riptide-docker-images repo](https://github.com/Parakoopa/riptide-docker-images/tree/master/§§YOUR_IMAGE_NAME§§) ([history](https://github.com/Parakoopa/riptide-docker-images/tree/master/§§YOUR_IMAGE_NAME§§))
+	[README in riptide-docker-images repo](https://github.com/theCapypara/riptide-docker-images/tree/master/§§YOUR_IMAGE_NAME§§) ([history](https://github.com/theCapypara/riptide-docker-images/tree/master/§§YOUR_IMAGE_NAME§§))
 
 # What is §§YOUR_IMAGE_NAME§§?
 
@@ -38,7 +38,7 @@ Pay close attention to links and references with §§YOUR_IMAGE_NAME§§.
 
 <!-- General usage notes. After this, keep the following text: -->
 
-This image is meant to be used with [Riptide](https://github.com/Parakoopa/riptide-cli). 
+This image is meant to be used with [Riptide](https://github.com/theCapypara/riptide-cli). 
 Using it without Riptide is probably possible, but not supported.
 
 ## Basic Usage with Riptide
