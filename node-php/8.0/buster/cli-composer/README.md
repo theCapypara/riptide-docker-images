@@ -1,39 +1,39 @@
 # Supported tags and respective `Dockerfile` links
 
--	[`8.1-cli`, `8-cli`, `cli`, `8.1`, `8`, `latest` (*8.1/buster/cli-composer/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/node-php/8.1/buster/cli-composer/Dockerfile)
--	[`8.1-cli-composer2`, `8-cli-composer2`, `cli-composer` (*8.1/buster/cli-composer/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/node-php/8.1/buster/cli-composer2/Dockerfile)
--	[`8.1-apache`, `8-apache`, `apache` (*8.1/buster/apache/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/node-php/8.1/buster/apache/Dockerfile)
--	[`8.1-fpm`, `8-fpm`, `fpm` (*8.1/buster/fpm/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/node-php/8.1/buster/fpm/Dockerfile)
--	[`8.0-cli`, `8.0` (*8.0/buster/cli-composer/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/node-php/8.0/buster/cli-composer/Dockerfile)
--	[`8.0-cli-composer2` (*8.0/buster/cli-composer2/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/node-php/8.0/buster/cli-composer2/Dockerfile)
--	[`8.0-apache` (*8.0/buster/apache/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/node-php/8.0/buster/apache/Dockerfile)
--	[`8.0-fpm` (*8.0/buster/fpm/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/node-php/8.0/buster/fpm/Dockerfile)
--	[`7.4-cli`, `7-cli`, `7.4`, `7` (*7.4/buster/cli-composer/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/node-php/7.4/buster/cli-composer/Dockerfile)
--	[`7.4-cli-composer2` (*7.4/buster/cli-composer2/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/node-php/7.4/buster/cli-composer2/Dockerfile)
--	[`7.4-apache`, `7-apache` (*7.4/buster/apache/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/node-php/7.4/buster/apache/Dockerfile)
--	[`7.4-fpm`, `7-fpm` (*7.4/buster/fpm/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/node-php/7.4/buster/fpm/Dockerfile)
--	[`7.3-cli`, `7.3`, (*7.3/buster/cli-composer/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/node-php/7.3/buster/cli-composer/Dockerfile)
--	[`7.3-cli-composer2` (*7.3/buster/cli-composer2/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/node-php/7.3/buster/cli-composer2/Dockerfile)
--	[`7.3-apache`, (*7.3/buster/apache/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/node-php/7.3/buster/apache/Dockerfile)
--	[`7.3-fpm`, (*7.3/buster/fpm/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/node-php/7.3/buster/fpm/Dockerfile)
--	[`7.2-cli`, `7.2` (*7.2/buster/cli-composer/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/node-php/7.2/buster/cli-composer/Dockerfile)
--	[`7.2-cli-composer2` (*7.2/buster/cli-composer2/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/node-php/7.2/buster/cli-composer2/Dockerfile)
--	[`7.2-apache` (*7.2/buster/apache/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/node-php/7.2/buster/apache/Dockerfile)
--	[`7.2-fpm` (*7.2/buster/fpm/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/tree/master/node-php/7.2/buster/fpm/Dockerfile)
+-	[`8.1-cli`, `8-cli`, `cli`, `8.1`, `8`, `latest` (*8.1/buster/cli-composer/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/8.1/buster/cli-composer/Dockerfile)
+-	[`8.1-cli-composer2`, `8-cli-composer2`, `cli-composer` (*8.1/buster/cli-composer/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/8.1/buster/cli-composer2/Dockerfile)
+-	[`8.1-apache`, `8-apache`, `apache` (*8.1/buster/apache/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/8.1/buster/apache/Dockerfile)
+-	[`8.1-fpm`, `8-fpm`, `fpm` (*8.1/buster/fpm/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/8.1/buster/fpm/Dockerfile)
+-	[`8.0-cli`, `8.0` (*8.0/buster/cli-composer/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/8.0/buster/cli-composer/Dockerfile)
+-	[`8.0-cli-composer2` (*8.0/buster/cli-composer2/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/8.0/buster/cli-composer2/Dockerfile)
+-	[`8.0-apache` (*8.0/buster/apache/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/8.0/buster/apache/Dockerfile)
+-	[`8.0-fpm` (*8.0/buster/fpm/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/8.0/buster/fpm/Dockerfile)
+-	[`7.4-cli`, `7-cli`, `7.4`, `7` (*7.4/buster/cli-composer/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/7.4/buster/cli-composer/Dockerfile)
+-	[`7.4-cli-composer2` (*7.4/buster/cli-composer2/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/7.4/buster/cli-composer2/Dockerfile)
+-	[`7.4-apache`, `7-apache` (*7.4/buster/apache/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/7.4/buster/apache/Dockerfile)
+-	[`7.4-fpm`, `7-fpm` (*7.4/buster/fpm/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/7.4/buster/fpm/Dockerfile)
+-	[`7.3-cli`, `7.3`, (*7.3/buster/cli-composer/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/7.3/buster/cli-composer/Dockerfile)
+-	[`7.3-cli-composer2` (*7.3/buster/cli-composer2/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/7.3/buster/cli-composer2/Dockerfile)
+-	[`7.3-apache`, (*7.3/buster/apache/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/7.3/buster/apache/Dockerfile)
+-	[`7.3-fpm`, (*7.3/buster/fpm/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/7.3/buster/fpm/Dockerfile)
+-	[`7.2-cli`, `7.2` (*7.2/buster/cli-composer/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/7.2/buster/cli-composer/Dockerfile)
+-	[`7.2-cli-composer2` (*7.2/buster/cli-composer2/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/7.2/buster/cli-composer2/Dockerfile)
+-	[`7.2-apache` (*7.2/buster/apache/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/7.2/buster/apache/Dockerfile)
+-	[`7.2-fpm` (*7.2/buster/fpm/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/7.2/buster/fpm/Dockerfile)
 
 # Quick reference
 
 -	**Where to get help**:
-	[the Riptide Docker Images Github Repository](https://github.com/Parakoopa/riptide-docker-images)
+	[the Riptide Docker Images Github Repository](https://github.com/theCapypara/riptide-docker-images)
 
 -	**Where to file issues**:
-	[https://github.com/Parakoopa/riptide-docker-images/issues](https://github.com/Parakoopa/riptide-docker-images/issues)
+	[https://github.com/theCapypara/riptide-docker-images/issues](https://github.com/theCapypara/riptide-docker-images/issues)
 
 -	**Maintained by**:
-	[the Riptide Community](https://github.com/Parakoopa/riptide-docker-images)
+	[the Riptide Community](https://github.com/theCapypara/riptide-docker-images)
 
 -	**Source of this description**:
-	[README in riptide-docker-images repo](https://github.com/Parakoopa/riptide-docker-images/tree/master/node-php) ([history](https://github.com/Parakoopa/riptide-docker-images/tree/master/node-php))
+	[README in riptide-docker-images repo](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php) ([history](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php))
 
 # What is node-php?
 
@@ -84,7 +84,7 @@ xdebug.remote_autostart=off
 
 
 This image is meant for developers using php and node. If you are missing any extensions
-or tools, be sure to open a [pull request](https://github.com/Parakoopa/riptide-docker-images/pulls).
+or tools, be sure to open a [pull request](https://github.com/theCapypara/riptide-docker-images/pulls).
 
 # How to use this image.
 
@@ -92,7 +92,7 @@ See the description of the [official php images](https://hub.docker.com/_/php).
 The directory used for app sources is `/src`, not `/usr/src`!
 Commands and scripts can additionally make use of `node`, `npm`, `npx` and `yarn`.
 
-This image is meant to be used with [Riptide](https://github.com/Parakoopa/riptide-cli). 
+This image is meant to be used with [Riptide](https://github.com/theCapypara/riptide-cli). 
 Using it without Riptide is probably possible, but not supported.
 
 ## Basic Usage with Riptide

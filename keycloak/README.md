@@ -1,7 +1,7 @@
 # Supported tags and respective `Dockerfile` links
 
 -	[`21.0.1` (*21.0.1/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/keycloak/21.0.1/Dockerfile)
--	[`latest` (*latest/Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/keycloak/latest/alpine/Dockerfile)
+-	[`latest` (*latest/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/keycloak/latest/alpine/Dockerfile)
 
 # Quick reference
 
