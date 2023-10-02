@@ -1,4 +1,4 @@
-php builder
+nodes-php builder
 ===========
 
 Build script to update the individual images.

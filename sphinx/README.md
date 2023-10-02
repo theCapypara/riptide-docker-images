@@ -1,20 +1,20 @@
 # Supported tags and respective `Dockerfile` links
 
--	[`latest` (*Dockerfile*)](https://github.com/Parakoopa/riptide-docker-images/sphinx/Dockerfile)
+-	[`latest` (*Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/sphinx/Dockerfile)
 
 # Quick reference
 
 -	**Where to get help**:
-	[the Riptide Docker Images Github Repository](https://github.com/Parakoopa/riptide-docker-images)
+	[the Riptide Docker Images Github Repository](https://github.com/theCapypara/riptide-docker-images)
 
 -	**Where to file issues**:
-	[https://github.com/Parakoopa/riptide-docker-images/issues](https://github.com/Parakoopa/riptide-docker-images/issues)
+	[https://github.com/theCapypara/riptide-docker-images/issues](https://github.com/theCapypara/riptide-docker-images/issues)
 
 -	**Maintained by**:
-	[the Riptide Community](https://github.com/Parakoopa/riptide-docker-images)
+	[the Riptide Community](https://github.com/theCapypara/riptide-docker-images)
 
 -	**Source of this description**:
-	[README in riptide-docker-images repo](https://github.com/Parakoopa/riptide-docker-images/tree/master/sphinx) ([history](https://github.com/Parakoopa/riptide-docker-images/tree/master/sphinx))
+	[README in riptide-docker-images repo](https://github.com/theCapypara/riptide-docker-images/tree/master/sphinx) ([history](https://github.com/theCapypara/riptide-docker-images/tree/master/sphinx))
 
 # What is sphinx?
 
@@ -32,12 +32,12 @@ before this.
 
 Default working directory is /src.
 
-This image is meant to be used with [Riptide](https://github.com/Parakoopa/riptide-cli). 
+This image is meant to be used with [Riptide](https://github.com/theCapypara/riptide-cli). 
 Using it without Riptide is probably possible, but not supported.
 
 ## Basic Usage with Riptide
 
-See the community repository entry for [https://github.com/Parakoopa/riptide-repo/tree/master/app/sphinx/latest.yml](``/app/sphinx/latest``).
+See the community repository entry for [https://github.com/theCapypara/riptide-repo/tree/master/app/sphinx/latest.yml](``/app/sphinx/latest``).
 
 This image supports ``run_as_current_user: true`` for services (this is the default).
 
