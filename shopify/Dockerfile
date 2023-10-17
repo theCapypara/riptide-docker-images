@@ -10,7 +10,7 @@ RUN apk add --no-cache \
     openrc \
     bash \
     postgresql-libs \
-    ruby ruby-dev libzip-dev \
+    ruby ruby-dev ruby-ffi libzip-dev \
     alpine-sdk \
     gcompat \
     icu \
@@ -146,7 +146,7 @@ RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar \
   # smoke test
   && yarn --version
 
-RUN apk --no-cache add gettext git htop tree
+RUN apk --no-cache add gettext git htop tree linux-headers libc-dev
 
 # Install Rust
 RUN apk --no-cache add rust rust-wasm cargo
