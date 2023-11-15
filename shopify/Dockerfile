@@ -53,8 +53,8 @@ RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
 ENV NODE_VERSION 18.16.1
 
-RUN addgroup -g 1000 node \
-    && adduser -u 1000 -G node -s /bin/sh -D node \
+RUN addgroup -g 1000 ${DOCKER_USER} \
+    && adduser -u 1000 -G ${DOCKER_USER} -s /bin/sh -D ${DOCKER_USER} \
     && apk add --no-cache \
         libstdc++ \
     && apk add --no-cache --virtual .build-deps \
