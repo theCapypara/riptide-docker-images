@@ -32,9 +32,14 @@ arg-guard-%::
 	@if [ -z '${${*}}' ]; then $(MAKE); echo; echo 'Variable $* not set'; echo; exit 1; fi
 
 init-directories:: ## initialize directories
+	@[ -d ~/.config/shopify ] || mkdir ~/.config/shopify
 	@[ -d ~/.config/shopify-cli-kit-nodejs ] || mkdir ~/.config/shopify-cli-kit-nodejs
 	@[ -d ~/.config/shopify-cli-app-nodejs ] || mkdir ~/.config/shopify-cli-app-nodejs
+	@[ -d ~/.config/shopify-cli-host-theme-conf-nodejs ] || mkdir ~/.config/shopify-cli-host-theme-conf-nodejs
 	@[ -d ~/.cache/shopify-cli-nodejs ] || mkdir ~/.cache/shopify-cli-nodejs
+	@[ -d ~/.cache/shopify ] || mkdir ~/.cache/shopify
+	@[ -d ~/.cache/@shopify ] || mkdir ~/.cache/@shopify
+	@[ -d ~/.cache/shopify-gems-nodejs ] || mkdir ~/.cache/shopify-gems-nodejs
 	@[ -d ~/.config/composer ] || mkdir ~/.config/composer
 	@[ -d ~/.cache/composer ] || mkdir ~/.cache/composer
 	@[ -d ~/.config/ngrok ] || mkdir ~/.config/ngrok
@@ -85,9 +90,14 @@ define dev-container-run-cmd
 		--network=host \
 		-v ~/.config/composer:/home/$(DOCKER_USER)/.config/composer \
 		-v ~/.cache/composer:/home/$(DOCKER_USER)/.cache/composer \
+		-v ~/.config/shopify:/home/$(DOCKER_USER)/.config/shopify \
 		-v ~/.config/shopify-cli-kit-nodejs:/home/$(DOCKER_USER)/.config/shopify-cli-kit-nodejs \
 		-v ~/.config/shopify-cli-app-nodejs:/home/$(DOCKER_USER)/.config/shopify-cli-app-nodejs \
+		-v ~/.config/shopify-cli-host-theme-conf-nodejs:/home/$(DOCKER_USER)/.config/shopify-cli-host-theme-conf-nodejs \
 		-v ~/.cache/shopify-cli-nodejs:/home/$(DOCKER_USER)/.cache/shopify-cli-nodejs \
+		-v ~/.cache/@shopify:/home/$(DOCKER_USER)/.cache/@shopify \
+		-v ~/.cache/shopify:/home/$(DOCKER_USER)/.cache/shopify \
+		-v ~/.cache/shopify-gems-nodejs:/home/$(DOCKER_USER)/.cache/shopify-gems-nodejs \
 		-v ~/.config/ngrok:/home/$(DOCKER_USER)/.config/ngrok \
 		-v ~/.cache/yarn:/home/$(DOCKER_USER)/.cache/yarn \
 		-v ~/.npm:/home/$(DOCKER_USER)/.npm \
