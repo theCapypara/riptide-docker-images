@@ -124,6 +124,9 @@ jobs:
          - path: keycloak/21.0.1
            tags:
              - riptidepy/keycloak:21.0.1
+         - path: jupyter
+           tags:
+             - riptidepy/jupyter:latest
     name: Build Image
     steps:
       - name: Checkout
