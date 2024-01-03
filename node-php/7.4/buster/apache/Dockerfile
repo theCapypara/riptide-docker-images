@@ -28,7 +28,7 @@ RUN requirements="nodejs npm msmtp libmcrypt-dev libwebp-dev libmcrypt4 libcurl3
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install xdebug (based on https://gist.github.com/chadrien/c90927ec2d160ffea9c4)
-RUN yes | pecl install xdebug
+RUN yes | pecl install xdebug-3.1.6
 
 # Install yaml
 RUN yes | pecl install yaml && echo "extension=yaml.so" > /usr/local/etc/php/conf.d/ext-yaml.ini
