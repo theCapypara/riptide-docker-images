@@ -49,9 +49,9 @@ COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 # use the default production configuration for PHP
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
-# Node and YARN installation steps taken from https://github.com/nodejs/docker-node/blob/f95846a323c3ca71009b5b1b6b5f9bfa326a56a3/18/alpine3.16/Dockerfile
+# Node and YARN installation steps taken from https://github.com/nodejs/docker-node/blob/ab5769dc69feb4007d9aafb03316ea0e3edb4227/20/alpine3.19/Dockerfile
 
-ENV NODE_VERSION 18.16.1
+ENV NODE_VERSION 20.11.0
 
 RUN addgroup -g 1000 ${DOCKER_USER} \
     && adduser -u 1000 -G ${DOCKER_USER} -s /bin/sh -D ${DOCKER_USER} \
@@ -59,12 +59,14 @@ RUN addgroup -g 1000 ${DOCKER_USER} \
         libstdc++ \
     && apk add --no-cache --virtual .build-deps \
         curl \
-    && ARCH= && alpineArch="$(apk --print-arch)" \
+    && ARCH= OPENSSL_ARCH='linux*' && alpineArch="$(apk --print-arch)" \
       && case "${alpineArch##*-}" in \
-        x86_64) \
-          ARCH='x64' \
-          CHECKSUM="aaf8f7ad6191dd62228b16071364d900a4ac3ef65c4931bc2a11925c2f72fb83" \
-          ;; \
+        x86_64) ARCH='x64' CHECKSUM="a8bec39586538896715be7a2ca7ef08727a58ad94d25876c5db11cafacff4c37" OPENSSL_ARCH=linux-x86_64;; \
+        x86) OPENSSL_ARCH=linux-elf;; \
+        aarch64) OPENSSL_ARCH=linux-aarch64;; \
+        arm*) OPENSSL_ARCH=linux-armv4;; \
+        ppc64le) OPENSSL_ARCH=linux-ppc64le;; \
+        s390x) OPENSSL_ARCH=linux-s390x;; \
         *) ;; \
       esac \
   && if [ -n "${CHECKSUM}" ]; then \
@@ -99,6 +101,7 @@ RUN addgroup -g 1000 ${DOCKER_USER} \
       890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4 \
       C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C \
       108F52B48DB57BB0CC439B2997B01419BD92F80A \
+      A363A499291CBBC940DD62E41F10027AF002F8B0 \
     ; do \
       gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" || \
       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ; \
@@ -120,6 +123,8 @@ RUN addgroup -g 1000 ${DOCKER_USER} \
     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt; \
   fi \
   && rm -f "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" \
+  # Remove unused OpenSSL headers to save ~34MB. See this NodeJS issue: https://github.com/nodejs/node/issues/46451
+  && find /usr/local/include/node/openssl/archs -mindepth 1 -maxdepth 1 ! -name "$OPENSSL_ARCH" -exec rm -rf {} \; \
   && apk del .build-deps \
   # smoke tests
   && node --version \
@@ -128,6 +133,8 @@ RUN addgroup -g 1000 ${DOCKER_USER} \
 ENV YARN_VERSION 1.22.19
 
 RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar \
+  # use pre-existing gpg directory, see https://github.com/nodejs/docker-node/pull/1895#issuecomment-1550389150
+  && export GNUPGHOME="$(mktemp -d)" \
   && for key in \
     6A010C5166006599AA17F08146C2130DFD2497F5 \
   ; do \
@@ -137,6 +144,8 @@ RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar \
   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz" \
   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc" \
   && gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz \
+  && gpgconf --kill all \
+  && rm -rf "$GNUPGHOME" \
   && mkdir -p /opt \
   && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/ \
   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn \

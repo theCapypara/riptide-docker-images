@@ -117,7 +117,7 @@ jobs:
              - riptidepy/sphinx:latest
          - path: shopify
            tags:
-             - riptidepy/shopify:latest
+             - riptidepy/shopify:n20.11_p8.1
          - path: keycloak/latest
            tags:
              - riptidepy/keycloak:latest
