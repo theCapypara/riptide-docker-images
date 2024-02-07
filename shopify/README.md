@@ -56,3 +56,19 @@ docker run \
 # Volumes
 
 Have a look here for the volumes used by this image: [Shopify Riptide Service](https://github.com/theCapypara/riptide-repo/tree/master/service/shopify)
+
+# Versions
+atm we cannot use a standard versioning scheme here
+since there are too many languages in the container
+that may not fit your needs.
+
+`latest` stays as is for now since we cannot change it without probably breaking things.
+
+Please update your projects to use a version following the new scheme:  
+{firstLowercaseCharacterOfLanguage[anOptionalSecondCharacter]}{version} divided by underscores e.g.: `n20.11_p8.1`  
+Ruby and Rust are skipped for now since we assume that there is no need for containers with specific versions of these languages.
+
+| V           | Node  | PHP | Ruby | Rust |
+|-------------|-------|-----|------|------|
+| latest      | 18.16 | 8.1 |      |      |
+| n20.11_p8.1 | 20.11 | 8.1 | 3.1  | 1.60 |
