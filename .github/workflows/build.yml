@@ -153,6 +153,15 @@ jobs:
          - path: jupyter
            tags:
              - riptidepy/jupyter:latest
+         - path: opensearch/latest
+           tags:
+             - riptidepy/opensearch:latest
+         - path: opensearch/2
+           tags:
+             - riptidepy/opensearch:2
+         - path: opensearch/1
+           tags:
+             - riptidepy/opensearch:1
     name: Build Image
     steps:
       - name: Checkout
