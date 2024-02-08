@@ -14,7 +14,7 @@ jobs:
       fail-fast: false
       matrix:
        include:
-         - path: php/8.3/buster/cli-composer
+         - path: php/8.3/bookworm/cli-composer
            tags:
              - riptidepy/php:8.3-cli
              - riptidepy/php:8-cli
@@ -22,17 +22,17 @@ jobs:
              - riptidepy/php:8.3
              - riptidepy/php:8
              - riptidepy/php:latest
-         - path: php/8.3/buster/cli-composer2
+         - path: php/8.3/bookworm/cli-composer2
            tags:
              - riptidepy/php:8.3-cli-composer2
              - riptidepy/php:8-cli-composer2
              - riptidepy/php:cli-composer2
-         - path: php/8.3/buster/apache
+         - path: php/8.3/bookworm/apache
            tags:
              - riptidepy/php:8.3-apache
              - riptidepy/php:8-apache
              - riptidepy/php:apache
-         - path: php/8.3/buster/fpm
+         - path: php/8.3/bookworm/fpm
            tags:
              - riptidepy/php:8.3-fpm
              - riptidepy/php:8-fpm
@@ -76,7 +76,7 @@ jobs:
          - path: php/8.0/buster/fpm
            tags:
              - riptidepy/php:8.0-fpm
-         - path: node-php/8.3/buster/cli-composer
+         - path: node-php/8.3/bookworm/cli-composer
            tags:
              - riptidepy/node-php:8.3-cli
              - riptidepy/node-php:8-cli
@@ -84,17 +84,17 @@ jobs:
              - riptidepy/node-php:8.3
              - riptidepy/node-php:8
              - riptidepy/node-php:latest
-         - path: node-php/8.3/buster/cli-composer2
+         - path: node-php/8.3/bookworm/cli-composer2
            tags:
              - riptidepy/node-php:8.3-cli-composer2
              - riptidepy/node-php:8-cli-composer2
              - riptidepy/node-php:cli-composer2
-         - path: node-php/8.3/buster/apache
+         - path: node-php/8.3/bookworm/apache
            tags:
              - riptidepy/node-php:8.3-apache
              - riptidepy/node-php:8-apache
              - riptidepy/node-php:apache
-         - path: node-php/8.3/buster/fpm
+         - path: node-php/8.3/bookworm/fpm
            tags:
              - riptidepy/node-php:8.3-fpm
              - riptidepy/node-php:8-fpm
