@@ -46,5 +46,6 @@ for goal in */*/*; do
     fi
 
     cp "README.md" "$version/$base/$variant/"
+    echo "$version/$base/$variant/"
 
 done

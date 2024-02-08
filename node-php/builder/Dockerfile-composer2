@@ -31,9 +31,6 @@ RUN requirements="nodejs npm msmtp libmcrypt-dev libwebp-dev libmcrypt4 libcurl3
 # Install xdebug (based on https://gist.github.com/chadrien/c90927ec2d160ffea9c4)
 RUN yes | pecl install xdebug
 
-# Install MongoDB
-RUN yes | pecl install mongodb && echo "extension=mongodb.so" > /usr/local/etc/php/conf.d/mongo.ini
-
 # Install yaml
 RUN yes | pecl install yaml && echo "extension=yaml.so" > /usr/local/etc/php/conf.d/ext-yaml.ini
 
