@@ -143,7 +143,7 @@ jobs:
              - riptidepy/sphinx:latest
          - path: shopify
            tags:
-             - riptidepy/shopify:n20.11_p8.1
+             - riptidepy/shopify:n18.19_p8.1
          - path: keycloak/latest
            tags:
              - riptidepy/keycloak:latest
