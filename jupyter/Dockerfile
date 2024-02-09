@@ -24,6 +24,7 @@ VOLUME /notebooks
 VOLUME /home/docker/.jupyter
 EXPOSE 8888
 COPY JUPYTER.md /assets/
+COPY code /assets/
 COPY entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["entrypoint.sh"]
 CMD [ \
