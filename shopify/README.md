@@ -72,4 +72,4 @@ Ruby and Rust are skipped for now since we assume that there is no need for cont
 |-------------|-------|-----|------|------|
 | latest      | 18.16 | 8.1 |      |      |
 | n20.11_p8.1 | 20.11 | 8.1 | 3.1  | 1.60 |
-| n18.19_p8.1 | 18.19 | 8.1 | 3.1  | 1.60 |
+| n18.19_p8.2 | 18.19 | 8.2 | 3.1  | 1.60 |
