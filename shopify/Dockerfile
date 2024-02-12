@@ -1,4 +1,4 @@
-FROM php:8.1-cli-alpine3.16
+FROM php:8.2-cli-alpine3.16
 
 ARG XDEBUG_CLIENT_HOST=host.docker.internal
 ENV XDEBUG_CLIENT_HOST $XDEBUG_CLIENT_HOST
@@ -14,6 +14,7 @@ RUN apk add --no-cache \
     alpine-sdk \
     gcompat \
     icu \
+    linux-headers \
     freetype libjpeg-turbo libpng libwebp
 
 # add build dependencies
@@ -26,7 +27,7 @@ RUN apk add --no-cache -t .build-deps \
 # install bundler for extension deployment
     gem install bundler && \
 # configure xdebug
-    pecl install xdebug-3.1.5 && docker-php-ext-enable xdebug && \
+    pecl install xdebug-3.3.1 && docker-php-ext-enable xdebug && \
     echo 'xdebug.mode=off' >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini  && \
     echo "xdebug.client_host=${XDEBUG_CLIENT_HOST}" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && \
     echo 'xdebug.cli_color=1' >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && \
