@@ -1,4 +1,4 @@
-FROM php:8.2-cli-alpine3.16
+FROM php:8.3-cli-alpine3.17
 
 ARG XDEBUG_CLIENT_HOST=host.docker.internal
 ENV XDEBUG_CLIENT_HOST $XDEBUG_CLIENT_HOST
