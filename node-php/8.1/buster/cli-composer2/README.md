@@ -20,14 +20,6 @@
 -	[`7.4-cli-composer2` (*7.4/buster/cli-composer2/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/7.4/buster/cli-composer2/Dockerfile)
 -	[`7.4-apache`, `7-apache` (*7.4/buster/apache/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/7.4/buster/apache/Dockerfile)
 -	[`7.4-fpm`, `7-fpm` (*7.4/buster/fpm/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/7.4/buster/fpm/Dockerfile)
--	[`7.3-cli`, `7.3`, (*7.3/buster/cli-composer/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/7.3/buster/cli-composer/Dockerfile)
--	[`7.3-cli-composer2` (*7.3/buster/cli-composer2/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/7.3/buster/cli-composer2/Dockerfile)
--	[`7.3-apache`, (*7.3/buster/apache/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/7.3/buster/apache/Dockerfile)
--	[`7.3-fpm`, (*7.3/buster/fpm/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/7.3/buster/fpm/Dockerfile)
--	[`7.2-cli`, `7.2` (*7.2/buster/cli-composer/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/7.2/buster/cli-composer/Dockerfile)
--	[`7.2-cli-composer2` (*7.2/buster/cli-composer2/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/7.2/buster/cli-composer2/Dockerfile)
--	[`7.2-apache` (*7.2/buster/apache/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/7.2/buster/apache/Dockerfile)
--	[`7.2-fpm` (*7.2/buster/fpm/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/node-php/7.2/buster/fpm/Dockerfile)
 
 # Quick reference
 
@@ -112,7 +104,7 @@ app:
   name: php-demo
   services:
     php_demo:
-      image: riptidepy/node-php:7.3-apache
+      image: riptidepy/node-php:7.4-apache
       environment:
         APACHE_RUN_USER: '#{{ os_user() }}'
         APACHE_RUN_GROUP: '#{{ os_group() }}'

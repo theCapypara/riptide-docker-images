@@ -138,6 +138,19 @@ jobs:
          - path: node-php/8.0/buster/fpm
            tags:
              - riptidepy/node-php:8.0-fpm
+         - path: node-php/7.4/buster/cli-composer
+           tags:
+             - riptidepy/node-php:7.4-cli
+             - riptidepy/node-php:7.4
+         - path: node-php/7.4/buster/cli-composer2
+           tags:
+             - riptidepy/node-php:7.4-cli-composer2
+         - path: node-php/7.4/buster/apache
+           tags:
+             - riptidepy/node-php:7.4-apache
+         - path: node-php/7.4/buster/fpm
+           tags:
+             - riptidepy/node-php:7.4-fpm
          - path: sphinx
            tags:
              - riptidepy/sphinx:latest

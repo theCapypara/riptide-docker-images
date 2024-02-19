@@ -38,6 +38,12 @@ for goal in */*/*; do
     fi
     sed -e "s/\@@gd_requirements@@/$GD_OPTIONS/" -i "$version/$base/$variant/Dockerfile"
 
+    # If php 7.4: Install xdebug 3.1.6
+    if [[ "7.4" == "$version" ]]
+    then
+        sed -e "s/pecl install xdebug/pecl install xdebug-3.1.6/" -i "$version/$base/$variant/Dockerfile"
+    fi
+
     # If apache: Copy Vhost and add it
     if [[ "apache" == "$variant" ]]
     then
