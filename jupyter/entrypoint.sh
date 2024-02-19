@@ -4,6 +4,7 @@ set -x
 
 NEW_VENV=false
 cp /assets/JUPYTER.md /src
+cp /assets/code /src
 
 # create new venv if not existing
 if [ ! -d .venv ]; then

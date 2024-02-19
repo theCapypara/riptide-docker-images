@@ -56,6 +56,23 @@ To install a new dependency (like in this example `pandas`), run the following:
 poetry add pandas
 ```
 
+
+## Visual Studio Code integration
+
+First make sure your notebook server is running (`riptide status`), otherwise start it.
+
+Start VSC from the project directory with `./code`.
+This will start it with a setting, that allows connections to the Riptide server, without rejecting the certificate.
+
+Make sure you have the official VSC extensions `Python` and `Jupyter` installed.
+
+Now open your notebook in VSC.
+Click on `Select Kernel` and choose `Existing Jupyter Server`.
+Finally, type the server URL (given by `riptide status`) and select the shown kernel.
+
+Now you should be able to run cells inside the notebook with your Riptide service.
+
+
 ## Troubleshooting
 
 If something is not working as expected, you can attach to the logs:
