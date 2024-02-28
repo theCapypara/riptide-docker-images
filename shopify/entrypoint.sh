@@ -20,9 +20,9 @@ if [ "${1#-}" != "${1}" ] || [ -z "$(command -v "${1}")" ] || { [ -f "${1}" ] &&
   set -- node "$@"
 fi
 
-# Keep Makefile and documentation up to date
 RIPTIDE_SRC="/src/"
 if [ -d "$RIPTIDE_SRC" ]; then
+  # Keep Makefile and documentation up to date
   cp /assets/base.makefile "$RIPTIDE_SRC"
   if [ ! -f "$RIPTIDE_SRC""Makefile" ]; then
     cp /assets/Makefile "$RIPTIDE_SRC"
@@ -31,6 +31,11 @@ if [ -d "$RIPTIDE_SRC" ]; then
     touch "$RIPTIDE_SRC"".env"
   fi
   cp /assets/shopify-app.md "$RIPTIDE_SRC"
+
+  # Create app configuration if missing
+  if [ ! -f "$RIPTIDE_SRC""shopify.app.toml" ] && [ -f "$RIPTIDE_SRC""template.shopify.app.toml" ]; then
+    cp "$RIPTIDE_SRC""template.shopify.app.toml" "$RIPTIDE_SRC""shopify.app.toml"
+  fi
 fi
 
 exec "$@"
