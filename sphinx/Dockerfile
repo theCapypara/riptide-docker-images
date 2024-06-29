@@ -1,6 +1,6 @@
-FROM python:3.7
+FROM python:3.12
 
-RUN pip install sphinx sphinx-autobuild sphinx_rtd_theme
+RUN pip install -U sphinx sphinx-autobuild sphinx_rtd_theme
 
 RUN apt-get update && \
     apt-get install git make libcap-dev g++ libffi-dev openssl libssl-dev -y && \
