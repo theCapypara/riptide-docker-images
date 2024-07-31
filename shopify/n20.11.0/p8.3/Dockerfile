@@ -1,4 +1,4 @@
-FROM php:8.3-cli-alpine3.17
+FROM php:8.3-cli-alpine3.20
 
 ARG XDEBUG_CLIENT_HOST=host.docker.internal
 ENV XDEBUG_CLIENT_HOST $XDEBUG_CLIENT_HOST
@@ -52,7 +52,7 @@ RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
 # Node and YARN installation steps taken from https://github.com/nodejs/docker-node/blob/ab5769dc69feb4007d9aafb03316ea0e3edb4227/18/alpine3.19/Dockerfile
 
-ENV NODE_VERSION 18.19.0
+ENV NODE_VERSION 20.11.0
 
 RUN addgroup -g 1000 ${DOCKER_USER} \
     && adduser -u 1000 -G ${DOCKER_USER} -s /bin/sh -D ${DOCKER_USER} \
@@ -62,7 +62,7 @@ RUN addgroup -g 1000 ${DOCKER_USER} \
         curl \
     && ARCH= OPENSSL_ARCH='linux*' && alpineArch="$(apk --print-arch)" \
       && case "${alpineArch##*-}" in \
-        x86_64) ARCH='x64' CHECKSUM="10b7b23b6b867a25f060a433b83f5c3ecb3bcf7cdba1c0ce46443065a832fd41" OPENSSL_ARCH=linux-x86_64;; \
+        x86_64) ARCH='x64' CHECKSUM="a8bec39586538896715be7a2ca7ef08727a58ad94d25876c5db11cafacff4c37" OPENSSL_ARCH=linux-x86_64;; \
         x86) OPENSSL_ARCH=linux-elf;; \
         aarch64) OPENSSL_ARCH=linux-aarch64;; \
         arm*) OPENSSL_ARCH=linux-armv4;; \
