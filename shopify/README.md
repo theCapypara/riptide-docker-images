@@ -68,8 +68,15 @@ Please update your projects to use a version following the new scheme:
 {firstLowercaseCharacterOfLanguage[anOptionalSecondCharacter]}{version} divided by underscores e.g.: `n20.11_p8.1`  
 Ruby and Rust are skipped for now since we assume that there is no need for containers with specific versions of these languages.
 
+The Rust version in all of these images is updated to the latest version available in the Alpine version
+used at build time. See below for current versions.
+
 | V           | Node  | PHP | Ruby | Rust |
 |-------------|-------|-----|------|------|
-| latest      | 18.16 | 8.1 |      |      |
-| n20.11_p8.1 | 20.11 | 8.1 | 3.1  | 1.60 |
-| n18.19_p8.3 | 18.19 | 8.3 | 3.1  | 1.60 |
+| latest      | 18.16 | 8.1 |      | 1.60 |
+| n18.19_p8.1 | 18.19 | 8.1 | 3.1  | 1.78 |
+| n18.19_p8.2 | 18.19 | 8.2 | 3.1  | 1.78 |
+| n18.19_p8.3 | 18.19 | 8.3 | 3.1  | 1.78 |
+| n20.11_p8.1 | 20.11 | 8.1 | 3.1  | 1.78 |
+| n20.11_p8.2 | 20.11 | 8.2 | 3.1  | 1.78 |
+| n20.11_p8.3 | 20.11 | 8.3 | 3.1  | 1.78 |
