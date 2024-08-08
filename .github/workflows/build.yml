@@ -190,6 +190,9 @@ jobs:
          - path: opensearch/1
            tags:
              - riptidepy/opensearch:1
+         - path: streamlit
+           tags:
+             - riptidepy/streamlit:latest
     name: Build Image
     steps:
       - name: Checkout
