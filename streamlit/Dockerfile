@@ -25,11 +25,11 @@ COPY STREAMLIT.md /assets/
 COPY entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["entrypoint.sh"]
 
-RUN mkdir -p ~/.streamlit && tee -a ~/.streamlit/config.toml << END \
-[server] \
-headless = true \
-address = "0.0.0.0" \
-END
+RUN mkdir -p ~/.streamlit && tee -a ~/.streamlit/config.toml <<EOF
+[server]
+headless = true
+address = "0.0.0.0"
+EOF
 
 CMD [ \
   "python", \
