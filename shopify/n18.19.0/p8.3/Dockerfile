@@ -15,7 +15,8 @@ RUN apk add --no-cache \
     gcompat \
     icu \
     linux-headers \
-    freetype libjpeg-turbo libpng libwebp
+    freetype libjpeg-turbo libpng libwebp \
+    xdg-utils
 
 # add build dependencies
 RUN apk add --no-cache -t .build-deps \
