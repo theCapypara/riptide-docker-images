@@ -1,6 +1,6 @@
 # Supported tags and respective `Dockerfile` links
 
--	[`8.4`, `latest` (*8.4/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/mysql/8.4/Dockerfile)
+-	[`8.4` (*8.4/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/mysql/8.4/Dockerfile)
 
 # Quick reference
 
