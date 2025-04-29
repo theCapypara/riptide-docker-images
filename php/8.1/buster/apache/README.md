@@ -1,9 +1,13 @@
 # Supported tags and respective `Dockerfile` links
 
--	[`8.3-cli`, `8-cli`, `cli`, `8.3`, `8`, `latest` (*8.3/buster/cli-composer/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.3/buster/cli-composer/Dockerfile)
--	[`8.3-cli-composer2`, `8-cli-composer2`, `cli-composer` (*8.3/buster/cli-composer/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.3/buster/cli-composer2/Dockerfile)
--	[`8.3-apache`, `8-apache`, `apache` (*8.3/buster/apache/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.3/buster/apache/Dockerfile)
--	[`8.3-fpm`, `8-fpm`, `fpm` (*8.3/buster/fpm/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.3/buster/fpm/Dockerfile)
+-	[`8.4-cli`, `8-cli`, `cli`, `8.4`, `8`, `latest` (*8.4/bookworm/cli-composer/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.4/buster/cli-composer/Dockerfile)
+-	[`8.4-cli-composer2`, `8-cli-composer2`, `cli-composer` (*8.4/bookworm/cli-composer/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.4/buster/cli-composer2/Dockerfile)
+-	[`8.4-apache`, `8-apache`, `apache` (*8.4/bookworm/apache/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.4/buster/apache/Dockerfile)
+-	[`8.4-fpm`, `8-fpm`, `fpm` (*8.4/bookworm/fpm/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.4/buster/fpm/Dockerfile)
+-	[`8.3-cli`, `8.3` (*8.3/bookworm/cli-composer/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.3/buster/cli-composer/Dockerfile)
+-	[`8.3-cli-composer2` (*8.3/bookworm/cli-composer/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.3/buster/cli-composer2/Dockerfile)
+-	[`8.3-apache` (*8.3/bookworm/apache/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.3/buster/apache/Dockerfile)
+-	[`8.3-fpm` (*8.3/bookworm/fpm/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.3/buster/fpm/Dockerfile)
 -	[`8.2-cli`, `8.2` (*8.2/buster/cli-composer/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.2/buster/cli-composer/Dockerfile)
 -	[`8.2-cli-composer2` (*8.2/buster/cli-composer2/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.2/buster/cli-composer2/Dockerfile)
 -	[`8.2-apache` (*8.2/buster/apache/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.2/buster/apache/Dockerfile)

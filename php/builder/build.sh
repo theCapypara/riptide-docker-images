@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Builder script, see README. Run from ..!
 # This is not run by CI. Run manually and commit the resulting files.
 
