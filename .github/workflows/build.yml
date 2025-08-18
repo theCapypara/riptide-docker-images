@@ -1,7 +1,10 @@
 
 name: Build
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ master ]
+  pull_request: { }
 
 # Ensures that only one task will run at a time.
 concurrency:
