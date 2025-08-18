@@ -1,4 +1,4 @@
-FROM php:8.1-cli-alpine3.20
+FROM php:8.1-cli-alpine3.22
 
 ARG XDEBUG_CLIENT_HOST=host.docker.internal
 ENV XDEBUG_CLIENT_HOST $XDEBUG_CLIENT_HOST
@@ -162,8 +162,7 @@ RUN apk --no-cache add gettext git htop tree linux-headers libc-dev
 # Install Rust
 RUN apk --no-cache add rust rust-wasm cargo
 RUN cargo install cargo-wasi --root=/usr/local
-# Newer cargo-component versions use the target name wasm32-wasip1, which isn't supported by Alpine yet.
-RUN apk add --no-cache libressl-dev && cargo install 'cargo-component@0.13.2' --root=/usr/local
+RUN apk add --no-cache libressl-dev && cargo install 'cargo-component' --root=/usr/local
 RUN chmod 777 /usr/local/bin
 
 COPY base.makefile Makefile shopify-app.md /assets/
