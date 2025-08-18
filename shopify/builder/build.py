@@ -10,7 +10,7 @@ NODE_VERSIONS = {
     "20.11.0": "a8bec39586538896715be7a2ca7ef08727a58ad94d25876c5db11cafacff4c37",
 }
 PHP_VERSIONS = ["8.1", "8.2", "8.3"]
-ALPINE_VERSION = "3.20"  # Rust 1.78
+ALPINE_VERSION = "3.22"  # Rust 1.87
 COPY_FILES = [
     "base.makefile",
     "entrypoint.sh",
