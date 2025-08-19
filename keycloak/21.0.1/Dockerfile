@@ -3,10 +3,9 @@
 
 FROM registry.access.redhat.com/ubi9 AS ubi-micro-build
 
-# util-linux: provides /usr/bin/su
 # shadow-utils: provides /usr/sbin/groupadd
 # gawk: provides /usr/bin/awk
-ARG PACKAGES="util-linux shadow-utils gawk"
+ARG PACKAGES="shadow-utils gawk"
 
 RUN mkdir -p /mnt/rootfs
 RUN dnf install --installroot /mnt/rootfs ${PACKAGES} --releasever 9 --setopt install_weak_deps=false --nodocs -y; dnf --installroot /mnt/rootfs clean all
