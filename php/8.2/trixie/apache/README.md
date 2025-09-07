@@ -72,6 +72,9 @@ These images work like their official counterpart, but:
   - bz2
   - sockets
   - yaml
+  - opcache
+  - exif
+  - pcntl
 - They include the following tools for developing with common PHP applications and Frameworks
   - [Composer](https://getcomposer.org/)
     - Composer 1 as `composer`
