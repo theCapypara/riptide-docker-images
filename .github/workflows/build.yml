@@ -211,7 +211,16 @@ jobs:
            tags:
              - riptidepy/jupyter:latest
          - path: streamlit
+           args: PYTHON_VERSION=3.12.11
            tags:
+             - riptidepy/streamlit:python-3.12.11
+             - riptidepy/streamlit:python-3.12
+         - path: streamlit
+           args: PYTHON_VERSION=3.13.7
+           tags:
+             - riptidepy/streamlit:python-3.13.7
+             - riptidepy/streamlit:python-3.13
+             - riptidepy/streamlit:python-3
              - riptidepy/streamlit:latest
     name: Build Image
     steps:
@@ -233,6 +242,7 @@ jobs:
           push: "${{ github.ref == 'refs/heads/master' }}"
           context: "${{ matrix.path }}"
           tags: "${{ join(matrix.tags, ',') }}"
+          build-args: "${{ matrix.args }}"
   description:
     runs-on: ubuntu-latest
     name: Update description
