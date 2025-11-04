@@ -33,9 +33,27 @@ if [ "$NEW_VENV" = true ]; then
   poetry install --no-root
 fi
 
-# ensure jupyter is installed
-if ! jupyter-notebook --version; then
-  poetry add jupyter
-fi
+# ensure jupyter is installed with required versions
+required_packages=(
+  "jupyter-core:^5.9.1"
+  "jupyter-client:^8.6.3"
+  "ipython:^9.6.0"
+  "ipykernel:^7.1.0"
+  "jupyter-server:^2.17.0"
+  "jupyterlab:^4.4.10"
+)
+installed_packages=$(sed -n '/\[tool.poetry.dependencies\]/,/\[/{/^\[/!p}' pyproject.toml)
+for rpkg in "${required_packages[@]}"; do
+  pkg_name="${rpkg%%:*}"
+  required_version="${rpkg#*:}"
+  escaped_version=$(echo "$required_version" | sed -e 's/[\^\.]/\\&/g')
+
+  if echo "$installed_packages" | grep -qE "^\s*${pkg_name}\s*=\s*\"?${escaped_version}"; then
+    echo "$pkg_name with version ${required_version} is already in pyproject.toml."
+  else
+    echo "$pkg_name is missing or has a different version than ${required_version}, it will be added."
+    poetry add "${pkg_name}@${required_version}"
+  fi
+done
 
 exec "$@"

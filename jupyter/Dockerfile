@@ -31,11 +31,12 @@ CMD [ \
   "python", \
   "-m", \
   "jupyter", \
-  "notebook", \
+  "lab", \
   "--ip", \
   "0.0.0.0", \
   "--no-browser", \
   "--ServerApp.root_dir=/notebooks", \
+  "--ServerApp.disable_check_xsrf=True", \
   "--IdentityProvider.token=''", \
   "--PasswordIdentityProvider.password_required=false" \
 ]
