@@ -32,9 +32,19 @@ for goal in */*/*; do
     # Read base Dockefile, first three lines are skipped.
     if [[ "cli-composer2" == "$variant" ]]
     then
-        tail -n +4 builder/Dockerfile-composer2 >> "$version/$base/$variant/Dockerfile"
+        if [[ $version == 8.0 ]] || [[ $version == 8.1 ]]
+        then
+            tail -n +4 builder/Dockerfile-pre-8-2-composer2 >> "$version/$base/$variant/Dockerfile"
+        else
+            tail -n +4 builder/Dockerfile-composer2 >> "$version/$base/$variant/Dockerfile"
+        fi
     else
-        tail -n +4 builder/Dockerfile >> "$version/$base/$variant/Dockerfile"
+        if [[ $version == 8.0 ]] || [[ $version == 8.1 ]]
+        then
+            tail -n +4 builder/Dockerfile-pre-8-2 >> "$version/$base/$variant/Dockerfile"
+        else
+            tail -n +4 builder/Dockerfile >> "$version/$base/$variant/Dockerfile"
+        fi
     fi
     sed -e "s/\@@gd_requirements@@/$GD_OPTIONS/" -i "$version/$base/$variant/Dockerfile"
 
