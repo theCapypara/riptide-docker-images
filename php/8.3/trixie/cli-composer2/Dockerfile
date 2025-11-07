@@ -23,6 +23,7 @@ RUN requirements="msmtp libmcrypt-dev libwebp-dev libmcrypt4 libcurl3-dev libfre
     && docker-php-ext-install exif \
     && docker-php-ext-install opcache \
     && docker-php-ext-install pcntl \
+    && docker-php-ext-install ftp \
     && requirementsToRemove="libmcrypt-dev libwebp-dev libcurl3-dev libpng-dev libfreetype6-dev libjpeg62-turbo-dev libxpm-dev libbz2-dev libzip-dev libonig-dev" \
     && apt-get purge -y $requirementsToRemove \
     && apt-get clean \

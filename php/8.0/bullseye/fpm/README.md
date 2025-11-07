@@ -54,27 +54,28 @@ php images based on the [official PHP images](https://hub.docker.com/_/php).
 These images work like their official counterpart, but:
 
 - They include the following PHP extensions (additional may be installed by default, depending on PHP version):
-  - xdebug 3 (not loaded by default & and controlled via XDEBUG_CONFIG, see below)
-  - pdo_mysql
-  - mysqli
-  - gd
-  - mbstring
-  - soap
-  - xsl
-  - intl
-  - ctype
-  - iconv
-  - json
-  - session
-  - simplexml
-  - tokenizer
   - bcmath
   - bz2
-  - sockets
-  - yaml
-  - opcache
+  - ctype
   - exif
+  - ftp (excluded from Php 8.2.15+)
+  - gd
+  - iconv
+  - intl
+  - json
+  - mbstring
+  - mysqli
+  - opcache
   - pcntl
+  - pdo_mysql
+  - session
+  - simplexml
+  - soap
+  - sockets
+  - tokenizer
+  - xdebug 3 (not loaded by default & and controlled via XDEBUG_CONFIG, see below)
+  - xsl
+  - yaml
 - They include the following tools for developing with common PHP applications and Frameworks
   - [Composer](https://getcomposer.org/)
     - Composer 1 as `composer`
