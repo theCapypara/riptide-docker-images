@@ -36,6 +36,7 @@ init-directories:: ## initialize directories
 	@[ -d ~/.config/shopify-cli-kit-nodejs ] || mkdir ~/.config/shopify-cli-kit-nodejs
 	@[ -d ~/.config/shopify-cli-app-nodejs ] || mkdir ~/.config/shopify-cli-app-nodejs
 	@[ -d ~/.config/shopify-cli-host-theme-conf-nodejs ] || mkdir ~/.config/shopify-cli-host-theme-conf-nodejs
+	@[ -d ~/.config/shopify-app-account-info-nodejs ] || mkdir ~/.config/shopify-app-account-info-nodejs
 	@[ -d ~/.cache/shopify-cli-nodejs ] || mkdir ~/.cache/shopify-cli-nodejs
 	@[ -d ~/.cache/shopify ] || mkdir ~/.cache/shopify
 	@[ -d ~/.cache/@shopify ] || mkdir ~/.cache/@shopify
@@ -94,6 +95,7 @@ define dev-container-run-cmd
 		-v ~/.config/shopify-cli-kit-nodejs:/home/$(DOCKER_USER)/.config/shopify-cli-kit-nodejs \
 		-v ~/.config/shopify-cli-app-nodejs:/home/$(DOCKER_USER)/.config/shopify-cli-app-nodejs \
 		-v ~/.config/shopify-cli-host-theme-conf-nodejs:/home/$(DOCKER_USER)/.config/shopify-cli-host-theme-conf-nodejs \
+		-v ~/.config/shopify-app-account-info-nodejs:/home/$(DOCKER_USER)/.config/shopify-app-account-info-nodejs \
 		-v ~/.cache/shopify-cli-nodejs:/home/$(DOCKER_USER)/.cache/shopify-cli-nodejs \
 		-v ~/.cache/@shopify:/home/$(DOCKER_USER)/.cache/@shopify \
 		-v ~/.cache/shopify:/home/$(DOCKER_USER)/.cache/shopify \
