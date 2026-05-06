@@ -8,6 +8,7 @@ NODE_VERSIONS = {
     # Checksum
     "18.19.0": "10b7b23b6b867a25f060a433b83f5c3ecb3bcf7cdba1c0ce46443065a832fd41",
     "20.11.0": "a8bec39586538896715be7a2ca7ef08727a58ad94d25876c5db11cafacff4c37",
+    "24.15.0": "8b75070ed35ef8381548f4396d3cf957fd1449db063f288fe00b0cb64456477f",
 }
 PHP_VERSIONS = ["8.1", "8.2", "8.3"]
 ALPINE_VERSION = "3.22"  # Rust 1.87
