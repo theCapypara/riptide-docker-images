@@ -16,7 +16,8 @@ RUN apk add --no-cache \
     icu \
     linux-headers \
     freetype libjpeg-turbo libpng libwebp \
-    xdg-utils
+    xdg-utils \
+    python3 g++ make py3-setuptools
 
 # add build dependencies
 RUN apk add --no-cache -t .build-deps \
@@ -24,7 +25,7 @@ RUN apk add --no-cache -t .build-deps \
     libxml2-dev \
     icu-dev \
     freetype-dev libpng-dev libjpeg-turbo-dev libwebp-dev \
-    autoconf g++ make && \
+    autoconf && \
 # install bundler for extension deployment
     gem install bundler && \
 # configure xdebug
