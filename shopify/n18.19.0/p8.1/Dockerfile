@@ -159,10 +159,13 @@ RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar \
 
 RUN apk --no-cache add gettext git htop tree linux-headers libc-dev
 
-# Install Rust
+# Install Rust with the WebAssembly targets needed for Shopify Functions
+# (modern Shopify Functions build with `cargo build --target=wasm32-unknown-unknown`,
+# which is provided by the rust-wasm package). cargo-wasi was unmaintained and
+# targeted wasm32-wasi, which Rust 1.84 removed; cargo-component pulls in
+# transitive deps that bumped their MSRV beyond Alpine's bundled rustc and is
+# not needed by Shopify Functions, so neither is installed here.
 RUN apk --no-cache add rust rust-wasm cargo
-RUN cargo install cargo-wasi --root=/usr/local
-RUN apk add --no-cache libressl-dev && cargo install 'cargo-component' --root=/usr/local
 RUN chmod 777 /usr/local/bin
 
 COPY base.makefile Makefile shopify-app.md /assets/
