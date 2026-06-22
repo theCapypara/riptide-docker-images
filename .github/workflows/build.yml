@@ -234,7 +234,7 @@ jobs:
     name: Build Image
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v4
       - name: Set up Docker Buildx
@@ -264,7 +264,7 @@ jobs:
            repository: riptidepy/sphinx
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Update description
         uses: peter-evans/dockerhub-description@v5
         with:
