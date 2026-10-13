@@ -1,9 +1,13 @@
 # Supported tags and respective `Dockerfile` links
 
--	[`8.4-cli`, `8-cli`, `cli`, `8.4`, `8`, `latest` (*8.4/trixie/cli-composer/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.4/trixie/cli-composer/Dockerfile)
--	[`8.4-cli-composer2`, `8-cli-composer2`, `cli-composer` (*8.4/trixie/cli-composer/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.4/trixie/cli-composer2/Dockerfile)
--	[`8.4-apache`, `8-apache`, `apache` (*8.4/trixie/apache/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.4/trixie/apache/Dockerfile)
--	[`8.4-fpm`, `8-fpm`, `fpm` (*8.4/trixie/fpm/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.4/trixie/fpm/Dockerfile)
+-	[`8.5-cli`, `8-cli`, `cli`, `8.5`, `8`, `latest` (*8.5/trixie/cli-composer/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.5/trixie/cli-composer/Dockerfile)
+-	[`8.5-cli-composer2`, `8-cli-composer2`, `cli-composer` (*8.5/trixie/cli-composer/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.5/trixie/cli-composer2/Dockerfile)
+-	[`8.5-apache`, `8-apache`, `apache` (*8.5/trixie/apache/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.5/trixie/apache/Dockerfile)
+-	[`8.5-fpm`, `8-fpm`, `fpm` (*8.5/trixie/fpm/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.5/trixie/fpm/Dockerfile)
+-	[`8.4-cli`, `8.4` (*8.4/trixie/cli-composer/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.4/trixie/cli-composer/Dockerfile)
+-	[`8.4-cli-composer2` (*8.4/trixie/cli-composer/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.4/trixie/cli-composer2/Dockerfile)
+-	[`8.4-apache` (*8.4/trixie/apache/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.4/trixie/apache/Dockerfile)
+-	[`8.4-fpm` (*8.4/trixie/fpm/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.4/trixie/fpm/Dockerfile)
 -	[`8.3-cli`, `8.3` (*8.3/trixie/cli-composer/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.3/trixie/cli-composer/Dockerfile)
 -	[`8.3-cli-composer2` (*8.3/trixie/cli-composer/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.3/trixie/cli-composer2/Dockerfile)
 -	[`8.3-apache` (*8.3/trixie/apache/Dockerfile*)](https://github.com/theCapypara/riptide-docker-images/tree/master/php/8.3/trixie/apache/Dockerfile)

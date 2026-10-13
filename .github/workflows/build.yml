@@ -17,29 +17,42 @@ jobs:
       fail-fast: false
       matrix:
        include:
+         - path: php/8.5/trixie/cli-composer
+           tags:
+             - riptidepy/php:8.5-cli
+             - riptidepy/php:8-cli
+             - riptidepy/php:cli
+             - riptidepy/php:8.5
+             - riptidepy/php:8
+             - riptidepy/php:latest
+         - path: php/8.5/trixie/cli-composer2
+           tags:
+             - riptidepy/php:8.5-cli-composer2
+             - riptidepy/php:8-cli-composer2
+             - riptidepy/php:cli-composer2
+         - path: php/8.5/trixie/apache
+           tags:
+             - riptidepy/php:8.5-apache
+             - riptidepy/php:8-apache
+             - riptidepy/php:apache
+         - path: php/8.5/trixie/fpm
+           tags:
+             - riptidepy/php:8.5-fpm
+             - riptidepy/php:8-fpm
+             - riptidepy/php:fpm
          - path: php/8.4/trixie/cli-composer
            tags:
              - riptidepy/php:8.4-cli
-             - riptidepy/php:8-cli
-             - riptidepy/php:cli
              - riptidepy/php:8.4
-             - riptidepy/php:8
-             - riptidepy/php:latest
          - path: php/8.4/trixie/cli-composer2
            tags:
              - riptidepy/php:8.4-cli-composer2
-             - riptidepy/php:8-cli-composer2
-             - riptidepy/php:cli-composer2
          - path: php/8.4/trixie/apache
            tags:
              - riptidepy/php:8.4-apache
-             - riptidepy/php:8-apache
-             - riptidepy/php:apache
          - path: php/8.4/trixie/fpm
            tags:
              - riptidepy/php:8.4-fpm
-             - riptidepy/php:8-fpm
-             - riptidepy/php:fpm
          - path: php/8.3/trixie/cli-composer
            tags:
              - riptidepy/php:8.3-cli
@@ -92,29 +105,42 @@ jobs:
          - path: php/8.0/bullseye/fpm
            tags:
              - riptidepy/php:8.0-fpm
+         - path: node-php/8.5/trixie/cli-composer
+           tags:
+             - riptidepy/node-php:8.5-cli
+             - riptidepy/node-php:8-cli
+             - riptidepy/node-php:cli
+             - riptidepy/node-php:8.5
+             - riptidepy/node-php:8
+             - riptidepy/node-php:latest
+         - path: node-php/8.5/trixie/cli-composer2
+           tags:
+             - riptidepy/node-php:8.5-cli-composer2
+             - riptidepy/node-php:8-cli-composer2
+             - riptidepy/node-php:cli-composer2
+         - path: node-php/8.5/trixie/apache
+           tags:
+             - riptidepy/node-php:8.5-apache
+             - riptidepy/node-php:8-apache
+             - riptidepy/node-php:apache
+         - path: node-php/8.5/trixie/fpm
+           tags:
+             - riptidepy/node-php:8.5-fpm
+             - riptidepy/node-php:8-fpm
+             - riptidepy/node-php:fpm
          - path: node-php/8.4/trixie/cli-composer
            tags:
              - riptidepy/node-php:8.4-cli
-             - riptidepy/node-php:8-cli
-             - riptidepy/node-php:cli
              - riptidepy/node-php:8.4
-             - riptidepy/node-php:8
-             - riptidepy/node-php:latest
          - path: node-php/8.4/trixie/cli-composer2
            tags:
              - riptidepy/node-php:8.4-cli-composer2
-             - riptidepy/node-php:8-cli-composer2
-             - riptidepy/node-php:cli-composer2
          - path: node-php/8.4/trixie/apache
            tags:
              - riptidepy/node-php:8.4-apache
-             - riptidepy/node-php:8-apache
-             - riptidepy/node-php:apache
          - path: node-php/8.4/trixie/fpm
            tags:
              - riptidepy/node-php:8.4-fpm
-             - riptidepy/node-php:8-fpm
-             - riptidepy/node-php:fpm
          - path: node-php/8.3/trixie/cli-composer
            tags:
              - riptidepy/node-php:8.3-cli
