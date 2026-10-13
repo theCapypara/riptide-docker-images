@@ -38,6 +38,12 @@ for goal in */*/*; do
     fi
     sed -e "s/\@@gd_requirements@@/$GD_OPTIONS/" -i "$version/$base/$variant/Dockerfile"
 
+    # PHP >= 8.5: OPcache is compiled into the core and can no longer be installed as a shared extension
+    if [[ ! "$version" =~ ^(7\.[0-9]|8\.[0-4])$ ]]
+    then
+        sed -e "/docker-php-ext-install opcache/d" -i "$version/$base/$variant/Dockerfile"
+    fi
+
     # If php 7.4: Install xdebug 3.1.6
     if [[ "7.4" == "$version" ]]
     then
